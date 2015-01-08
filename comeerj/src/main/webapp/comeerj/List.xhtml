@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{home.ListComeerjTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="ComeerjListForm">
+                <p:panel header="#{home.ListComeerjTitle}">
+                    <p:dataTable id="datalist" value="#{comeerjController.items}" var="item"
+                                 selectionMode="single" selection="#{comeerjController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.codFichaInscricaoComeerjId}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codFichaInscricaoComeerjId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codFichaInscricaoComeerjId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_numComeerj}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numComeerj}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_numFichaInscricao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numFichaInscricao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscTipoParticipacao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscTipoParticipacao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscTipoComissao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscTipoComissao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_datNascimento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.datNascimento}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscProfissao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscProfissao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codOpcao1Polo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codOpcao1Polo}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codOpcao2Polo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codOpcao2Polo}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomCompleto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomCompleto}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codSexo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codSexo}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomCracha}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomCracha}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscEnderecoMoradia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscEnderecoMoradia}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscComplementoMoradia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscComplementoMoradia}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomBairroMoradia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomBairroMoradia}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codCepMoradia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codCepMoradia}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomCidadeMoradia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomCidadeMoradia}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_sigUfMoradia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.sigUfMoradia}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codTipoContato1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codTipoContato1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_numContato1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numContato1}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codTipoContato2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codTipoContato2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_numContato2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numContato2}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codTipoContato3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codTipoContato3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_numContato3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numContato3}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscEmail}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscEmail}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_indOutraComeerj}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indOutraComeerj}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_qtdOutraComeerj}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.qtdOutraComeerj}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_indFazUsoMedicacao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indFazUsoMedicacao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscListaMedicamento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscListaMedicamento}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_indTemConvenioMedico}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indTemConvenioMedico}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomConvenioMedico}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomConvenioMedico}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_indVegetariano}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indVegetariano}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscListaAlimentacao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscListaAlimentacao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_indAlergico}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indAlergico}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscListaAlergia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscListaAlergia}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomAutorizacaoMenor}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomAutorizacaoMenor}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_numIdentidadeAutorizacaoMenor}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numIdentidadeAutorizacaoMenor}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomIeParticipa}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomIeParticipa}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_numCeuIea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numCeuIea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscEnderecoIea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscEnderecoIea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomBairroIea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomBairroIea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codCepIea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codCepIea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomCidadeIea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomCidadeIea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_sigUfIea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.sigUfIea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codTipoContatoIea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codTipoContatoIea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_numContatoIea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numContatoIea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscDiaReuniaoJuventude}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscDiaReuniaoJuventude}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscHorarioReuniaoJuventude}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscHorarioReuniaoJuventude}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codTipoParticipacaoIea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codTipoParticipacaoIea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscOutraParticipacao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscOutraParticipacao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_datCadastramento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.datCadastramento}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_indPagouInscricao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indPagouInscricao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_datPagamentoInscricao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.datPagamentoInscricao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_indCompareceu}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indCompareceu}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomContato4}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomContato4}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_numContato4}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numContato4}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_pwdSenhaCadastro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pwdSenhaCadastro}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomFilhoInscritoPolo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomFilhoInscritoPolo}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_numTelConvenioMedico}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numTelConvenioMedico}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codStatusFichaInscricao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codStatusFichaInscricao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomOutraCidadeMoradia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomOutraCidadeMoradia}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_nomOutraCidadeIea}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomOutraCidadeIea}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_indicImportouDados}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indicImportouDados}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_indicPortadorNEspecial}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indicPortadorNEspecial}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscObservacaoNEspecial}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscObservacaoNEspecial}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_indicTemRespPeqCompanheiro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indicTemRespPeqCompanheiro}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_numInscricaoRespPeqCompanheiro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numInscricaoRespPeqCompanheiro}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_numInscricaoConjuge}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numInscricaoConjuge}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscHabilidades}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscHabilidades}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_indicTemConjuge}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indicTemConjuge}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_codEstadoCivil}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codEstadoCivil}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscEmailCoordenador}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscEmailCoordenador}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_indicPortadorNEduEspecial}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indicPortadorNEduEspecial}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{home.ListComeerjTitle_dscObservacaoNEduEspecial}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscObservacaoNEduEspecial}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{home.Create}" actionListener="#{comeerjController.prepareCreate}" update=":ComeerjCreateForm" oncomplete="PF('ComeerjCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{home.View}" update=":ComeerjViewForm" oncomplete="PF('ComeerjViewDialog').show()" disabled="#{empty comeerjController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{home.Edit}" update=":ComeerjEditForm" oncomplete="PF('ComeerjEditDialog').show()" disabled="#{empty comeerjController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{home.Delete}" actionListener="#{comeerjController.destroy}" update=":growl,datalist" disabled="#{empty comeerjController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

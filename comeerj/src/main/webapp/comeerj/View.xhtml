@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ComeerjViewDlg" widgetVar="ComeerjViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{home.ViewComeerjTitle}">
+            <h:form id="ComeerjViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{comeerjController.selected != null}">
+                        <h:outputText value="#{home.ViewComeerjLabel_codFichaInscricaoComeerjId}"/>
+                        <h:outputText value="#{comeerjController.selected.codFichaInscricaoComeerjId}" title="#{home.ViewComeerjTitle_codFichaInscricaoComeerjId}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_numComeerj}"/>
+                        <h:outputText value="#{comeerjController.selected.numComeerj}" title="#{home.ViewComeerjTitle_numComeerj}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_numFichaInscricao}"/>
+                        <h:outputText value="#{comeerjController.selected.numFichaInscricao}" title="#{home.ViewComeerjTitle_numFichaInscricao}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscTipoParticipacao}"/>
+                        <h:outputText value="#{comeerjController.selected.dscTipoParticipacao}" title="#{home.ViewComeerjTitle_dscTipoParticipacao}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscTipoComissao}"/>
+                        <h:outputText value="#{comeerjController.selected.dscTipoComissao}" title="#{home.ViewComeerjTitle_dscTipoComissao}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_datNascimento}"/>
+                        <h:outputText value="#{comeerjController.selected.datNascimento}" title="#{home.ViewComeerjTitle_datNascimento}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscProfissao}"/>
+                        <h:outputText value="#{comeerjController.selected.dscProfissao}" title="#{home.ViewComeerjTitle_dscProfissao}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_codOpcao1Polo}"/>
+                        <h:outputText value="#{comeerjController.selected.codOpcao1Polo}" title="#{home.ViewComeerjTitle_codOpcao1Polo}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_codOpcao2Polo}"/>
+                        <h:outputText value="#{comeerjController.selected.codOpcao2Polo}" title="#{home.ViewComeerjTitle_codOpcao2Polo}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomCompleto}"/>
+                        <h:outputText value="#{comeerjController.selected.nomCompleto}" title="#{home.ViewComeerjTitle_nomCompleto}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_codSexo}"/>
+                        <h:outputText value="#{comeerjController.selected.codSexo}" title="#{home.ViewComeerjTitle_codSexo}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomCracha}"/>
+                        <h:outputText value="#{comeerjController.selected.nomCracha}" title="#{home.ViewComeerjTitle_nomCracha}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscEnderecoMoradia}"/>
+                        <h:outputText value="#{comeerjController.selected.dscEnderecoMoradia}" title="#{home.ViewComeerjTitle_dscEnderecoMoradia}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscComplementoMoradia}"/>
+                        <h:outputText value="#{comeerjController.selected.dscComplementoMoradia}" title="#{home.ViewComeerjTitle_dscComplementoMoradia}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomBairroMoradia}"/>
+                        <h:outputText value="#{comeerjController.selected.nomBairroMoradia}" title="#{home.ViewComeerjTitle_nomBairroMoradia}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_codCepMoradia}"/>
+                        <h:outputText value="#{comeerjController.selected.codCepMoradia}" title="#{home.ViewComeerjTitle_codCepMoradia}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomCidadeMoradia}"/>
+                        <h:outputText value="#{comeerjController.selected.nomCidadeMoradia}" title="#{home.ViewComeerjTitle_nomCidadeMoradia}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_sigUfMoradia}"/>
+                        <h:outputText value="#{comeerjController.selected.sigUfMoradia}" title="#{home.ViewComeerjTitle_sigUfMoradia}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_codTipoContato1}"/>
+                        <h:outputText value="#{comeerjController.selected.codTipoContato1}" title="#{home.ViewComeerjTitle_codTipoContato1}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_numContato1}"/>
+                        <h:outputText value="#{comeerjController.selected.numContato1}" title="#{home.ViewComeerjTitle_numContato1}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_codTipoContato2}"/>
+                        <h:outputText value="#{comeerjController.selected.codTipoContato2}" title="#{home.ViewComeerjTitle_codTipoContato2}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_numContato2}"/>
+                        <h:outputText value="#{comeerjController.selected.numContato2}" title="#{home.ViewComeerjTitle_numContato2}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_codTipoContato3}"/>
+                        <h:outputText value="#{comeerjController.selected.codTipoContato3}" title="#{home.ViewComeerjTitle_codTipoContato3}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_numContato3}"/>
+                        <h:outputText value="#{comeerjController.selected.numContato3}" title="#{home.ViewComeerjTitle_numContato3}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscEmail}"/>
+                        <h:outputText value="#{comeerjController.selected.dscEmail}" title="#{home.ViewComeerjTitle_dscEmail}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_indOutraComeerj}"/>
+                        <h:outputText value="#{comeerjController.selected.indOutraComeerj}" title="#{home.ViewComeerjTitle_indOutraComeerj}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_qtdOutraComeerj}"/>
+                        <h:outputText value="#{comeerjController.selected.qtdOutraComeerj}" title="#{home.ViewComeerjTitle_qtdOutraComeerj}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_indFazUsoMedicacao}"/>
+                        <h:outputText value="#{comeerjController.selected.indFazUsoMedicacao}" title="#{home.ViewComeerjTitle_indFazUsoMedicacao}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscListaMedicamento}"/>
+                        <h:outputText value="#{comeerjController.selected.dscListaMedicamento}" title="#{home.ViewComeerjTitle_dscListaMedicamento}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_indTemConvenioMedico}"/>
+                        <h:outputText value="#{comeerjController.selected.indTemConvenioMedico}" title="#{home.ViewComeerjTitle_indTemConvenioMedico}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomConvenioMedico}"/>
+                        <h:outputText value="#{comeerjController.selected.nomConvenioMedico}" title="#{home.ViewComeerjTitle_nomConvenioMedico}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_indVegetariano}"/>
+                        <h:outputText value="#{comeerjController.selected.indVegetariano}" title="#{home.ViewComeerjTitle_indVegetariano}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscListaAlimentacao}"/>
+                        <h:outputText value="#{comeerjController.selected.dscListaAlimentacao}" title="#{home.ViewComeerjTitle_dscListaAlimentacao}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_indAlergico}"/>
+                        <h:outputText value="#{comeerjController.selected.indAlergico}" title="#{home.ViewComeerjTitle_indAlergico}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscListaAlergia}"/>
+                        <h:outputText value="#{comeerjController.selected.dscListaAlergia}" title="#{home.ViewComeerjTitle_dscListaAlergia}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomAutorizacaoMenor}"/>
+                        <h:outputText value="#{comeerjController.selected.nomAutorizacaoMenor}" title="#{home.ViewComeerjTitle_nomAutorizacaoMenor}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_numIdentidadeAutorizacaoMenor}"/>
+                        <h:outputText value="#{comeerjController.selected.numIdentidadeAutorizacaoMenor}" title="#{home.ViewComeerjTitle_numIdentidadeAutorizacaoMenor}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomIeParticipa}"/>
+                        <h:outputText value="#{comeerjController.selected.nomIeParticipa}" title="#{home.ViewComeerjTitle_nomIeParticipa}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_numCeuIea}"/>
+                        <h:outputText value="#{comeerjController.selected.numCeuIea}" title="#{home.ViewComeerjTitle_numCeuIea}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscEnderecoIea}"/>
+                        <h:outputText value="#{comeerjController.selected.dscEnderecoIea}" title="#{home.ViewComeerjTitle_dscEnderecoIea}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomBairroIea}"/>
+                        <h:outputText value="#{comeerjController.selected.nomBairroIea}" title="#{home.ViewComeerjTitle_nomBairroIea}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_codCepIea}"/>
+                        <h:outputText value="#{comeerjController.selected.codCepIea}" title="#{home.ViewComeerjTitle_codCepIea}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomCidadeIea}"/>
+                        <h:outputText value="#{comeerjController.selected.nomCidadeIea}" title="#{home.ViewComeerjTitle_nomCidadeIea}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_sigUfIea}"/>
+                        <h:outputText value="#{comeerjController.selected.sigUfIea}" title="#{home.ViewComeerjTitle_sigUfIea}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_codTipoContatoIea}"/>
+                        <h:outputText value="#{comeerjController.selected.codTipoContatoIea}" title="#{home.ViewComeerjTitle_codTipoContatoIea}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_numContatoIea}"/>
+                        <h:outputText value="#{comeerjController.selected.numContatoIea}" title="#{home.ViewComeerjTitle_numContatoIea}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscDiaReuniaoJuventude}"/>
+                        <h:outputText value="#{comeerjController.selected.dscDiaReuniaoJuventude}" title="#{home.ViewComeerjTitle_dscDiaReuniaoJuventude}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscHorarioReuniaoJuventude}"/>
+                        <h:outputText value="#{comeerjController.selected.dscHorarioReuniaoJuventude}" title="#{home.ViewComeerjTitle_dscHorarioReuniaoJuventude}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_codTipoParticipacaoIea}"/>
+                        <h:outputText value="#{comeerjController.selected.codTipoParticipacaoIea}" title="#{home.ViewComeerjTitle_codTipoParticipacaoIea}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscOutraParticipacao}"/>
+                        <h:outputText value="#{comeerjController.selected.dscOutraParticipacao}" title="#{home.ViewComeerjTitle_dscOutraParticipacao}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_datCadastramento}"/>
+                        <h:outputText value="#{comeerjController.selected.datCadastramento}" title="#{home.ViewComeerjTitle_datCadastramento}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{home.ViewComeerjLabel_indPagouInscricao}"/>
+                        <h:outputText value="#{comeerjController.selected.indPagouInscricao}" title="#{home.ViewComeerjTitle_indPagouInscricao}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_datPagamentoInscricao}"/>
+                        <h:outputText value="#{comeerjController.selected.datPagamentoInscricao}" title="#{home.ViewComeerjTitle_datPagamentoInscricao}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_indCompareceu}"/>
+                        <h:outputText value="#{comeerjController.selected.indCompareceu}" title="#{home.ViewComeerjTitle_indCompareceu}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomContato4}"/>
+                        <h:outputText value="#{comeerjController.selected.nomContato4}" title="#{home.ViewComeerjTitle_nomContato4}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_numContato4}"/>
+                        <h:outputText value="#{comeerjController.selected.numContato4}" title="#{home.ViewComeerjTitle_numContato4}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_pwdSenhaCadastro}"/>
+                        <h:outputText value="#{comeerjController.selected.pwdSenhaCadastro}" title="#{home.ViewComeerjTitle_pwdSenhaCadastro}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomFilhoInscritoPolo}"/>
+                        <h:outputText value="#{comeerjController.selected.nomFilhoInscritoPolo}" title="#{home.ViewComeerjTitle_nomFilhoInscritoPolo}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_numTelConvenioMedico}"/>
+                        <h:outputText value="#{comeerjController.selected.numTelConvenioMedico}" title="#{home.ViewComeerjTitle_numTelConvenioMedico}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_codStatusFichaInscricao}"/>
+                        <h:outputText value="#{comeerjController.selected.codStatusFichaInscricao}" title="#{home.ViewComeerjTitle_codStatusFichaInscricao}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomOutraCidadeMoradia}"/>
+                        <h:outputText value="#{comeerjController.selected.nomOutraCidadeMoradia}" title="#{home.ViewComeerjTitle_nomOutraCidadeMoradia}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_nomOutraCidadeIea}"/>
+                        <h:outputText value="#{comeerjController.selected.nomOutraCidadeIea}" title="#{home.ViewComeerjTitle_nomOutraCidadeIea}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_indicImportouDados}"/>
+                        <h:outputText value="#{comeerjController.selected.indicImportouDados}" title="#{home.ViewComeerjTitle_indicImportouDados}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_indicPortadorNEspecial}"/>
+                        <h:outputText value="#{comeerjController.selected.indicPortadorNEspecial}" title="#{home.ViewComeerjTitle_indicPortadorNEspecial}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscObservacaoNEspecial}"/>
+                        <h:outputText value="#{comeerjController.selected.dscObservacaoNEspecial}" title="#{home.ViewComeerjTitle_dscObservacaoNEspecial}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_indicTemRespPeqCompanheiro}"/>
+                        <h:outputText value="#{comeerjController.selected.indicTemRespPeqCompanheiro}" title="#{home.ViewComeerjTitle_indicTemRespPeqCompanheiro}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_numInscricaoRespPeqCompanheiro}"/>
+                        <h:outputText value="#{comeerjController.selected.numInscricaoRespPeqCompanheiro}" title="#{home.ViewComeerjTitle_numInscricaoRespPeqCompanheiro}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_numInscricaoConjuge}"/>
+                        <h:outputText value="#{comeerjController.selected.numInscricaoConjuge}" title="#{home.ViewComeerjTitle_numInscricaoConjuge}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscHabilidades}"/>
+                        <h:outputText value="#{comeerjController.selected.dscHabilidades}" title="#{home.ViewComeerjTitle_dscHabilidades}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_indicTemConjuge}"/>
+                        <h:outputText value="#{comeerjController.selected.indicTemConjuge}" title="#{home.ViewComeerjTitle_indicTemConjuge}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_codEstadoCivil}"/>
+                        <h:outputText value="#{comeerjController.selected.codEstadoCivil}" title="#{home.ViewComeerjTitle_codEstadoCivil}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscEmailCoordenador}"/>
+                        <h:outputText value="#{comeerjController.selected.dscEmailCoordenador}" title="#{home.ViewComeerjTitle_dscEmailCoordenador}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_indicPortadorNEduEspecial}"/>
+                        <h:outputText value="#{comeerjController.selected.indicPortadorNEduEspecial}" title="#{home.ViewComeerjTitle_indicPortadorNEduEspecial}"/>
+                        <h:outputText value="#{home.ViewComeerjLabel_dscObservacaoNEduEspecial}"/>
+                        <h:outputText value="#{comeerjController.selected.dscObservacaoNEduEspecial}" title="#{home.ViewComeerjTitle_dscObservacaoNEduEspecial}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{home.Close}" onclick="ComeerjViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
