@@ -8,161 +8,161 @@
 
     <ui:composition>
 
-        <p:dialog id="ComeerjCreateDlg" widgetVar="ComeerjCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{home.CreateComeerjTitle}">
+        <p:dialog id="ComeerjCreateDlg" widgetVar="ComeerjCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{app.CreateComeerjTitle}">
             <h:form id="ComeerjCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{comeerjController.selected != null}">
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codFichaInscricaoComeerjId}" for="codFichaInscricaoComeerjId" />
-                        <p:inputText id="codFichaInscricaoComeerjId" value="#{comeerjController.selected.codFichaInscricaoComeerjId}" title="#{home.CreateComeerjTitle_codFichaInscricaoComeerjId}" required="true" requiredMessage="#{home.CreateComeerjRequiredMessage_codFichaInscricaoComeerjId}"/>
-                        <p:outputLabel value="#{home.CreateComeerjLabel_numComeerj}" for="numComeerj" />
-                        <p:inputText id="numComeerj" value="#{comeerjController.selected.numComeerj}" title="#{home.CreateComeerjTitle_numComeerj}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_numFichaInscricao}" for="numFichaInscricao" />
-                        <p:inputText id="numFichaInscricao" value="#{comeerjController.selected.numFichaInscricao}" title="#{home.CreateComeerjTitle_numFichaInscricao}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscTipoParticipacao}" for="dscTipoParticipacao" />
-                        <p:inputText id="dscTipoParticipacao" value="#{comeerjController.selected.dscTipoParticipacao}" title="#{home.CreateComeerjTitle_dscTipoParticipacao}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscTipoComissao}" for="dscTipoComissao" />
-                        <p:inputText id="dscTipoComissao" value="#{comeerjController.selected.dscTipoComissao}" title="#{home.CreateComeerjTitle_dscTipoComissao}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_datNascimento}" for="datNascimento" />
-                        <p:inputText id="datNascimento" value="#{comeerjController.selected.datNascimento}" title="#{home.CreateComeerjTitle_datNascimento}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscProfissao}" for="dscProfissao" />
-                        <p:inputText id="dscProfissao" value="#{comeerjController.selected.dscProfissao}" title="#{home.CreateComeerjTitle_dscProfissao}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codOpcao1Polo}" for="codOpcao1Polo" />
-                        <p:inputText id="codOpcao1Polo" value="#{comeerjController.selected.codOpcao1Polo}" title="#{home.CreateComeerjTitle_codOpcao1Polo}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codOpcao2Polo}" for="codOpcao2Polo" />
-                        <p:inputText id="codOpcao2Polo" value="#{comeerjController.selected.codOpcao2Polo}" title="#{home.CreateComeerjTitle_codOpcao2Polo}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomCompleto}" for="nomCompleto" />
-                        <p:inputText id="nomCompleto" value="#{comeerjController.selected.nomCompleto}" title="#{home.CreateComeerjTitle_nomCompleto}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codSexo}" for="codSexo" />
-                        <p:inputText id="codSexo" value="#{comeerjController.selected.codSexo}" title="#{home.CreateComeerjTitle_codSexo}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomCracha}" for="nomCracha" />
-                        <p:inputText id="nomCracha" value="#{comeerjController.selected.nomCracha}" title="#{home.CreateComeerjTitle_nomCracha}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscEnderecoMoradia}" for="dscEnderecoMoradia" />
-                        <p:inputText id="dscEnderecoMoradia" value="#{comeerjController.selected.dscEnderecoMoradia}" title="#{home.CreateComeerjTitle_dscEnderecoMoradia}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscComplementoMoradia}" for="dscComplementoMoradia" />
-                        <p:inputText id="dscComplementoMoradia" value="#{comeerjController.selected.dscComplementoMoradia}" title="#{home.CreateComeerjTitle_dscComplementoMoradia}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomBairroMoradia}" for="nomBairroMoradia" />
-                        <p:inputText id="nomBairroMoradia" value="#{comeerjController.selected.nomBairroMoradia}" title="#{home.CreateComeerjTitle_nomBairroMoradia}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codCepMoradia}" for="codCepMoradia" />
-                        <p:inputText id="codCepMoradia" value="#{comeerjController.selected.codCepMoradia}" title="#{home.CreateComeerjTitle_codCepMoradia}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomCidadeMoradia}" for="nomCidadeMoradia" />
-                        <p:inputText id="nomCidadeMoradia" value="#{comeerjController.selected.nomCidadeMoradia}" title="#{home.CreateComeerjTitle_nomCidadeMoradia}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_sigUfMoradia}" for="sigUfMoradia" />
-                        <p:inputText id="sigUfMoradia" value="#{comeerjController.selected.sigUfMoradia}" title="#{home.CreateComeerjTitle_sigUfMoradia}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codTipoContato1}" for="codTipoContato1" />
-                        <p:inputText id="codTipoContato1" value="#{comeerjController.selected.codTipoContato1}" title="#{home.CreateComeerjTitle_codTipoContato1}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_numContato1}" for="numContato1" />
-                        <p:inputText id="numContato1" value="#{comeerjController.selected.numContato1}" title="#{home.CreateComeerjTitle_numContato1}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codTipoContato2}" for="codTipoContato2" />
-                        <p:inputText id="codTipoContato2" value="#{comeerjController.selected.codTipoContato2}" title="#{home.CreateComeerjTitle_codTipoContato2}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_numContato2}" for="numContato2" />
-                        <p:inputText id="numContato2" value="#{comeerjController.selected.numContato2}" title="#{home.CreateComeerjTitle_numContato2}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codTipoContato3}" for="codTipoContato3" />
-                        <p:inputText id="codTipoContato3" value="#{comeerjController.selected.codTipoContato3}" title="#{home.CreateComeerjTitle_codTipoContato3}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_numContato3}" for="numContato3" />
-                        <p:inputText id="numContato3" value="#{comeerjController.selected.numContato3}" title="#{home.CreateComeerjTitle_numContato3}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscEmail}" for="dscEmail" />
-                        <p:inputText id="dscEmail" value="#{comeerjController.selected.dscEmail}" title="#{home.CreateComeerjTitle_dscEmail}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_indOutraComeerj}" for="indOutraComeerj" />
-                        <p:inputText id="indOutraComeerj" value="#{comeerjController.selected.indOutraComeerj}" title="#{home.CreateComeerjTitle_indOutraComeerj}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_qtdOutraComeerj}" for="qtdOutraComeerj" />
-                        <p:inputText id="qtdOutraComeerj" value="#{comeerjController.selected.qtdOutraComeerj}" title="#{home.CreateComeerjTitle_qtdOutraComeerj}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_indFazUsoMedicacao}" for="indFazUsoMedicacao" />
-                        <p:inputText id="indFazUsoMedicacao" value="#{comeerjController.selected.indFazUsoMedicacao}" title="#{home.CreateComeerjTitle_indFazUsoMedicacao}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscListaMedicamento}" for="dscListaMedicamento" />
-                        <p:inputText id="dscListaMedicamento" value="#{comeerjController.selected.dscListaMedicamento}" title="#{home.CreateComeerjTitle_dscListaMedicamento}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_indTemConvenioMedico}" for="indTemConvenioMedico" />
-                        <p:inputText id="indTemConvenioMedico" value="#{comeerjController.selected.indTemConvenioMedico}" title="#{home.CreateComeerjTitle_indTemConvenioMedico}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomConvenioMedico}" for="nomConvenioMedico" />
-                        <p:inputText id="nomConvenioMedico" value="#{comeerjController.selected.nomConvenioMedico}" title="#{home.CreateComeerjTitle_nomConvenioMedico}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_indVegetariano}" for="indVegetariano" />
-                        <p:inputText id="indVegetariano" value="#{comeerjController.selected.indVegetariano}" title="#{home.CreateComeerjTitle_indVegetariano}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscListaAlimentacao}" for="dscListaAlimentacao" />
-                        <p:inputText id="dscListaAlimentacao" value="#{comeerjController.selected.dscListaAlimentacao}" title="#{home.CreateComeerjTitle_dscListaAlimentacao}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_indAlergico}" for="indAlergico" />
-                        <p:inputText id="indAlergico" value="#{comeerjController.selected.indAlergico}" title="#{home.CreateComeerjTitle_indAlergico}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscListaAlergia}" for="dscListaAlergia" />
-                        <p:inputText id="dscListaAlergia" value="#{comeerjController.selected.dscListaAlergia}" title="#{home.CreateComeerjTitle_dscListaAlergia}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomAutorizacaoMenor}" for="nomAutorizacaoMenor" />
-                        <p:inputText id="nomAutorizacaoMenor" value="#{comeerjController.selected.nomAutorizacaoMenor}" title="#{home.CreateComeerjTitle_nomAutorizacaoMenor}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_numIdentidadeAutorizacaoMenor}" for="numIdentidadeAutorizacaoMenor" />
-                        <p:inputText id="numIdentidadeAutorizacaoMenor" value="#{comeerjController.selected.numIdentidadeAutorizacaoMenor}" title="#{home.CreateComeerjTitle_numIdentidadeAutorizacaoMenor}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomIeParticipa}" for="nomIeParticipa" />
-                        <p:inputText id="nomIeParticipa" value="#{comeerjController.selected.nomIeParticipa}" title="#{home.CreateComeerjTitle_nomIeParticipa}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_numCeuIea}" for="numCeuIea" />
-                        <p:inputText id="numCeuIea" value="#{comeerjController.selected.numCeuIea}" title="#{home.CreateComeerjTitle_numCeuIea}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscEnderecoIea}" for="dscEnderecoIea" />
-                        <p:inputText id="dscEnderecoIea" value="#{comeerjController.selected.dscEnderecoIea}" title="#{home.CreateComeerjTitle_dscEnderecoIea}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomBairroIea}" for="nomBairroIea" />
-                        <p:inputText id="nomBairroIea" value="#{comeerjController.selected.nomBairroIea}" title="#{home.CreateComeerjTitle_nomBairroIea}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codCepIea}" for="codCepIea" />
-                        <p:inputText id="codCepIea" value="#{comeerjController.selected.codCepIea}" title="#{home.CreateComeerjTitle_codCepIea}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomCidadeIea}" for="nomCidadeIea" />
-                        <p:inputText id="nomCidadeIea" value="#{comeerjController.selected.nomCidadeIea}" title="#{home.CreateComeerjTitle_nomCidadeIea}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_sigUfIea}" for="sigUfIea" />
-                        <p:inputText id="sigUfIea" value="#{comeerjController.selected.sigUfIea}" title="#{home.CreateComeerjTitle_sigUfIea}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codTipoContatoIea}" for="codTipoContatoIea" />
-                        <p:inputText id="codTipoContatoIea" value="#{comeerjController.selected.codTipoContatoIea}" title="#{home.CreateComeerjTitle_codTipoContatoIea}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_numContatoIea}" for="numContatoIea" />
-                        <p:inputText id="numContatoIea" value="#{comeerjController.selected.numContatoIea}" title="#{home.CreateComeerjTitle_numContatoIea}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscDiaReuniaoJuventude}" for="dscDiaReuniaoJuventude" />
-                        <p:inputText id="dscDiaReuniaoJuventude" value="#{comeerjController.selected.dscDiaReuniaoJuventude}" title="#{home.CreateComeerjTitle_dscDiaReuniaoJuventude}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscHorarioReuniaoJuventude}" for="dscHorarioReuniaoJuventude" />
-                        <p:inputText id="dscHorarioReuniaoJuventude" value="#{comeerjController.selected.dscHorarioReuniaoJuventude}" title="#{home.CreateComeerjTitle_dscHorarioReuniaoJuventude}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codTipoParticipacaoIea}" for="codTipoParticipacaoIea" />
-                        <p:inputText id="codTipoParticipacaoIea" value="#{comeerjController.selected.codTipoParticipacaoIea}" title="#{home.CreateComeerjTitle_codTipoParticipacaoIea}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscOutraParticipacao}" for="dscOutraParticipacao" />
-                        <p:inputText id="dscOutraParticipacao" value="#{comeerjController.selected.dscOutraParticipacao}" title="#{home.CreateComeerjTitle_dscOutraParticipacao}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_datCadastramento}" for="datCadastramento" />
-                        <p:calendar id="datCadastramento" pattern="MM/dd/yyyy" value="#{comeerjController.selected.datCadastramento}" title="#{home.EditComeerjTitle_datCadastramento}"  showOn="button"/>
-                        <p:outputLabel value="#{home.CreateComeerjLabel_indPagouInscricao}" for="indPagouInscricao" />
-                        <p:inputText id="indPagouInscricao" value="#{comeerjController.selected.indPagouInscricao}" title="#{home.CreateComeerjTitle_indPagouInscricao}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_datPagamentoInscricao}" for="datPagamentoInscricao" />
-                        <p:inputText id="datPagamentoInscricao" value="#{comeerjController.selected.datPagamentoInscricao}" title="#{home.CreateComeerjTitle_datPagamentoInscricao}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_indCompareceu}" for="indCompareceu" />
-                        <p:inputText id="indCompareceu" value="#{comeerjController.selected.indCompareceu}" title="#{home.CreateComeerjTitle_indCompareceu}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomContato4}" for="nomContato4" />
-                        <p:inputText id="nomContato4" value="#{comeerjController.selected.nomContato4}" title="#{home.CreateComeerjTitle_nomContato4}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_numContato4}" for="numContato4" />
-                        <p:inputText id="numContato4" value="#{comeerjController.selected.numContato4}" title="#{home.CreateComeerjTitle_numContato4}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_pwdSenhaCadastro}" for="pwdSenhaCadastro" />
-                        <p:inputText id="pwdSenhaCadastro" value="#{comeerjController.selected.pwdSenhaCadastro}" title="#{home.CreateComeerjTitle_pwdSenhaCadastro}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomFilhoInscritoPolo}" for="nomFilhoInscritoPolo" />
-                        <p:inputText id="nomFilhoInscritoPolo" value="#{comeerjController.selected.nomFilhoInscritoPolo}" title="#{home.CreateComeerjTitle_nomFilhoInscritoPolo}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_numTelConvenioMedico}" for="numTelConvenioMedico" />
-                        <p:inputText id="numTelConvenioMedico" value="#{comeerjController.selected.numTelConvenioMedico}" title="#{home.CreateComeerjTitle_numTelConvenioMedico}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codStatusFichaInscricao}" for="codStatusFichaInscricao" />
-                        <p:inputText id="codStatusFichaInscricao" value="#{comeerjController.selected.codStatusFichaInscricao}" title="#{home.CreateComeerjTitle_codStatusFichaInscricao}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomOutraCidadeMoradia}" for="nomOutraCidadeMoradia" />
-                        <p:inputText id="nomOutraCidadeMoradia" value="#{comeerjController.selected.nomOutraCidadeMoradia}" title="#{home.CreateComeerjTitle_nomOutraCidadeMoradia}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_nomOutraCidadeIea}" for="nomOutraCidadeIea" />
-                        <p:inputText id="nomOutraCidadeIea" value="#{comeerjController.selected.nomOutraCidadeIea}" title="#{home.CreateComeerjTitle_nomOutraCidadeIea}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_indicImportouDados}" for="indicImportouDados" />
-                        <p:inputText id="indicImportouDados" value="#{comeerjController.selected.indicImportouDados}" title="#{home.CreateComeerjTitle_indicImportouDados}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_indicPortadorNEspecial}" for="indicPortadorNEspecial" />
-                        <p:inputText id="indicPortadorNEspecial" value="#{comeerjController.selected.indicPortadorNEspecial}" title="#{home.CreateComeerjTitle_indicPortadorNEspecial}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscObservacaoNEspecial}" for="dscObservacaoNEspecial" />
-                        <p:inputText id="dscObservacaoNEspecial" value="#{comeerjController.selected.dscObservacaoNEspecial}" title="#{home.CreateComeerjTitle_dscObservacaoNEspecial}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_indicTemRespPeqCompanheiro}" for="indicTemRespPeqCompanheiro" />
-                        <p:inputText id="indicTemRespPeqCompanheiro" value="#{comeerjController.selected.indicTemRespPeqCompanheiro}" title="#{home.CreateComeerjTitle_indicTemRespPeqCompanheiro}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_numInscricaoRespPeqCompanheiro}" for="numInscricaoRespPeqCompanheiro" />
-                        <p:inputText id="numInscricaoRespPeqCompanheiro" value="#{comeerjController.selected.numInscricaoRespPeqCompanheiro}" title="#{home.CreateComeerjTitle_numInscricaoRespPeqCompanheiro}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_numInscricaoConjuge}" for="numInscricaoConjuge" />
-                        <p:inputText id="numInscricaoConjuge" value="#{comeerjController.selected.numInscricaoConjuge}" title="#{home.CreateComeerjTitle_numInscricaoConjuge}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscHabilidades}" for="dscHabilidades" />
-                        <p:inputText id="dscHabilidades" value="#{comeerjController.selected.dscHabilidades}" title="#{home.CreateComeerjTitle_dscHabilidades}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_indicTemConjuge}" for="indicTemConjuge" />
-                        <p:inputText id="indicTemConjuge" value="#{comeerjController.selected.indicTemConjuge}" title="#{home.CreateComeerjTitle_indicTemConjuge}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_codEstadoCivil}" for="codEstadoCivil" />
-                        <p:inputText id="codEstadoCivil" value="#{comeerjController.selected.codEstadoCivil}" title="#{home.CreateComeerjTitle_codEstadoCivil}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscEmailCoordenador}" for="dscEmailCoordenador" />
-                        <p:inputText id="dscEmailCoordenador" value="#{comeerjController.selected.dscEmailCoordenador}" title="#{home.CreateComeerjTitle_dscEmailCoordenador}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_indicPortadorNEduEspecial}" for="indicPortadorNEduEspecial" />
-                        <p:inputText id="indicPortadorNEduEspecial" value="#{comeerjController.selected.indicPortadorNEduEspecial}" title="#{home.CreateComeerjTitle_indicPortadorNEduEspecial}" />
-                        <p:outputLabel value="#{home.CreateComeerjLabel_dscObservacaoNEduEspecial}" for="dscObservacaoNEduEspecial" />
-                        <p:inputText id="dscObservacaoNEduEspecial" value="#{comeerjController.selected.dscObservacaoNEduEspecial}" title="#{home.CreateComeerjTitle_dscObservacaoNEduEspecial}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codFichaInscricaoComeerjId}" for="codFichaInscricaoComeerjId" />
+                        <p:inputText id="codFichaInscricaoComeerjId" value="#{comeerjController.selected.codFichaInscricaoComeerjId}" title="#{app.CreateComeerjTitle_codFichaInscricaoComeerjId}" required="true" requiredMessage="#{app.CreateComeerjRequiredMessage_codFichaInscricaoComeerjId}"/>
+                        <p:outputLabel value="#{app.CreateComeerjLabel_numComeerj}" for="numComeerj" />
+                        <p:inputText id="numComeerj" value="#{comeerjController.selected.numComeerj}" title="#{app.CreateComeerjTitle_numComeerj}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_numFichaInscricao}" for="numFichaInscricao" />
+                        <p:inputText id="numFichaInscricao" value="#{comeerjController.selected.numFichaInscricao}" title="#{app.CreateComeerjTitle_numFichaInscricao}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscTipoParticipacao}" for="dscTipoParticipacao" />
+                        <p:inputText id="dscTipoParticipacao" value="#{comeerjController.selected.dscTipoParticipacao}" title="#{app.CreateComeerjTitle_dscTipoParticipacao}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscTipoComissao}" for="dscTipoComissao" />
+                        <p:inputText id="dscTipoComissao" value="#{comeerjController.selected.dscTipoComissao}" title="#{app.CreateComeerjTitle_dscTipoComissao}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_datNascimento}" for="datNascimento" />
+                        <p:inputText id="datNascimento" value="#{comeerjController.selected.datNascimento}" title="#{app.CreateComeerjTitle_datNascimento}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscProfissao}" for="dscProfissao" />
+                        <p:inputText id="dscProfissao" value="#{comeerjController.selected.dscProfissao}" title="#{app.CreateComeerjTitle_dscProfissao}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codOpcao1Polo}" for="codOpcao1Polo" />
+                        <p:inputText id="codOpcao1Polo" value="#{comeerjController.selected.codOpcao1Polo}" title="#{app.CreateComeerjTitle_codOpcao1Polo}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codOpcao2Polo}" for="codOpcao2Polo" />
+                        <p:inputText id="codOpcao2Polo" value="#{comeerjController.selected.codOpcao2Polo}" title="#{app.CreateComeerjTitle_codOpcao2Polo}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomCompleto}" for="nomCompleto" />
+                        <p:inputText id="nomCompleto" value="#{comeerjController.selected.nomCompleto}" title="#{app.CreateComeerjTitle_nomCompleto}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codSexo}" for="codSexo" />
+                        <p:inputText id="codSexo" value="#{comeerjController.selected.codSexo}" title="#{app.CreateComeerjTitle_codSexo}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomCracha}" for="nomCracha" />
+                        <p:inputText id="nomCracha" value="#{comeerjController.selected.nomCracha}" title="#{app.CreateComeerjTitle_nomCracha}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscEnderecoMoradia}" for="dscEnderecoMoradia" />
+                        <p:inputText id="dscEnderecoMoradia" value="#{comeerjController.selected.dscEnderecoMoradia}" title="#{app.CreateComeerjTitle_dscEnderecoMoradia}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscComplementoMoradia}" for="dscComplementoMoradia" />
+                        <p:inputText id="dscComplementoMoradia" value="#{comeerjController.selected.dscComplementoMoradia}" title="#{app.CreateComeerjTitle_dscComplementoMoradia}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomBairroMoradia}" for="nomBairroMoradia" />
+                        <p:inputText id="nomBairroMoradia" value="#{comeerjController.selected.nomBairroMoradia}" title="#{app.CreateComeerjTitle_nomBairroMoradia}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codCepMoradia}" for="codCepMoradia" />
+                        <p:inputText id="codCepMoradia" value="#{comeerjController.selected.codCepMoradia}" title="#{app.CreateComeerjTitle_codCepMoradia}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomCidadeMoradia}" for="nomCidadeMoradia" />
+                        <p:inputText id="nomCidadeMoradia" value="#{comeerjController.selected.nomCidadeMoradia}" title="#{app.CreateComeerjTitle_nomCidadeMoradia}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_sigUfMoradia}" for="sigUfMoradia" />
+                        <p:inputText id="sigUfMoradia" value="#{comeerjController.selected.sigUfMoradia}" title="#{app.CreateComeerjTitle_sigUfMoradia}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codTipoContato1}" for="codTipoContato1" />
+                        <p:inputText id="codTipoContato1" value="#{comeerjController.selected.codTipoContato1}" title="#{app.CreateComeerjTitle_codTipoContato1}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_numContato1}" for="numContato1" />
+                        <p:inputText id="numContato1" value="#{comeerjController.selected.numContato1}" title="#{app.CreateComeerjTitle_numContato1}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codTipoContato2}" for="codTipoContato2" />
+                        <p:inputText id="codTipoContato2" value="#{comeerjController.selected.codTipoContato2}" title="#{app.CreateComeerjTitle_codTipoContato2}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_numContato2}" for="numContato2" />
+                        <p:inputText id="numContato2" value="#{comeerjController.selected.numContato2}" title="#{app.CreateComeerjTitle_numContato2}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codTipoContato3}" for="codTipoContato3" />
+                        <p:inputText id="codTipoContato3" value="#{comeerjController.selected.codTipoContato3}" title="#{app.CreateComeerjTitle_codTipoContato3}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_numContato3}" for="numContato3" />
+                        <p:inputText id="numContato3" value="#{comeerjController.selected.numContato3}" title="#{app.CreateComeerjTitle_numContato3}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscEmail}" for="dscEmail" />
+                        <p:inputText id="dscEmail" value="#{comeerjController.selected.dscEmail}" title="#{app.CreateComeerjTitle_dscEmail}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_indOutraComeerj}" for="indOutraComeerj" />
+                        <p:inputText id="indOutraComeerj" value="#{comeerjController.selected.indOutraComeerj}" title="#{app.CreateComeerjTitle_indOutraComeerj}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_qtdOutraComeerj}" for="qtdOutraComeerj" />
+                        <p:inputText id="qtdOutraComeerj" value="#{comeerjController.selected.qtdOutraComeerj}" title="#{app.CreateComeerjTitle_qtdOutraComeerj}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_indFazUsoMedicacao}" for="indFazUsoMedicacao" />
+                        <p:inputText id="indFazUsoMedicacao" value="#{comeerjController.selected.indFazUsoMedicacao}" title="#{app.CreateComeerjTitle_indFazUsoMedicacao}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscListaMedicamento}" for="dscListaMedicamento" />
+                        <p:inputText id="dscListaMedicamento" value="#{comeerjController.selected.dscListaMedicamento}" title="#{app.CreateComeerjTitle_dscListaMedicamento}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_indTemConvenioMedico}" for="indTemConvenioMedico" />
+                        <p:inputText id="indTemConvenioMedico" value="#{comeerjController.selected.indTemConvenioMedico}" title="#{app.CreateComeerjTitle_indTemConvenioMedico}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomConvenioMedico}" for="nomConvenioMedico" />
+                        <p:inputText id="nomConvenioMedico" value="#{comeerjController.selected.nomConvenioMedico}" title="#{app.CreateComeerjTitle_nomConvenioMedico}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_indVegetariano}" for="indVegetariano" />
+                        <p:inputText id="indVegetariano" value="#{comeerjController.selected.indVegetariano}" title="#{app.CreateComeerjTitle_indVegetariano}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscListaAlimentacao}" for="dscListaAlimentacao" />
+                        <p:inputText id="dscListaAlimentacao" value="#{comeerjController.selected.dscListaAlimentacao}" title="#{app.CreateComeerjTitle_dscListaAlimentacao}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_indAlergico}" for="indAlergico" />
+                        <p:inputText id="indAlergico" value="#{comeerjController.selected.indAlergico}" title="#{app.CreateComeerjTitle_indAlergico}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscListaAlergia}" for="dscListaAlergia" />
+                        <p:inputText id="dscListaAlergia" value="#{comeerjController.selected.dscListaAlergia}" title="#{app.CreateComeerjTitle_dscListaAlergia}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomAutorizacaoMenor}" for="nomAutorizacaoMenor" />
+                        <p:inputText id="nomAutorizacaoMenor" value="#{comeerjController.selected.nomAutorizacaoMenor}" title="#{app.CreateComeerjTitle_nomAutorizacaoMenor}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_numIdentidadeAutorizacaoMenor}" for="numIdentidadeAutorizacaoMenor" />
+                        <p:inputText id="numIdentidadeAutorizacaoMenor" value="#{comeerjController.selected.numIdentidadeAutorizacaoMenor}" title="#{app.CreateComeerjTitle_numIdentidadeAutorizacaoMenor}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomIeParticipa}" for="nomIeParticipa" />
+                        <p:inputText id="nomIeParticipa" value="#{comeerjController.selected.nomIeParticipa}" title="#{app.CreateComeerjTitle_nomIeParticipa}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_numCeuIea}" for="numCeuIea" />
+                        <p:inputText id="numCeuIea" value="#{comeerjController.selected.numCeuIea}" title="#{app.CreateComeerjTitle_numCeuIea}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscEnderecoIea}" for="dscEnderecoIea" />
+                        <p:inputText id="dscEnderecoIea" value="#{comeerjController.selected.dscEnderecoIea}" title="#{app.CreateComeerjTitle_dscEnderecoIea}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomBairroIea}" for="nomBairroIea" />
+                        <p:inputText id="nomBairroIea" value="#{comeerjController.selected.nomBairroIea}" title="#{app.CreateComeerjTitle_nomBairroIea}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codCepIea}" for="codCepIea" />
+                        <p:inputText id="codCepIea" value="#{comeerjController.selected.codCepIea}" title="#{app.CreateComeerjTitle_codCepIea}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomCidadeIea}" for="nomCidadeIea" />
+                        <p:inputText id="nomCidadeIea" value="#{comeerjController.selected.nomCidadeIea}" title="#{app.CreateComeerjTitle_nomCidadeIea}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_sigUfIea}" for="sigUfIea" />
+                        <p:inputText id="sigUfIea" value="#{comeerjController.selected.sigUfIea}" title="#{app.CreateComeerjTitle_sigUfIea}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codTipoContatoIea}" for="codTipoContatoIea" />
+                        <p:inputText id="codTipoContatoIea" value="#{comeerjController.selected.codTipoContatoIea}" title="#{app.CreateComeerjTitle_codTipoContatoIea}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_numContatoIea}" for="numContatoIea" />
+                        <p:inputText id="numContatoIea" value="#{comeerjController.selected.numContatoIea}" title="#{app.CreateComeerjTitle_numContatoIea}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscDiaReuniaoJuventude}" for="dscDiaReuniaoJuventude" />
+                        <p:inputText id="dscDiaReuniaoJuventude" value="#{comeerjController.selected.dscDiaReuniaoJuventude}" title="#{app.CreateComeerjTitle_dscDiaReuniaoJuventude}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscHorarioReuniaoJuventude}" for="dscHorarioReuniaoJuventude" />
+                        <p:inputText id="dscHorarioReuniaoJuventude" value="#{comeerjController.selected.dscHorarioReuniaoJuventude}" title="#{app.CreateComeerjTitle_dscHorarioReuniaoJuventude}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codTipoParticipacaoIea}" for="codTipoParticipacaoIea" />
+                        <p:inputText id="codTipoParticipacaoIea" value="#{comeerjController.selected.codTipoParticipacaoIea}" title="#{app.CreateComeerjTitle_codTipoParticipacaoIea}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscOutraParticipacao}" for="dscOutraParticipacao" />
+                        <p:inputText id="dscOutraParticipacao" value="#{comeerjController.selected.dscOutraParticipacao}" title="#{app.CreateComeerjTitle_dscOutraParticipacao}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_datCadastramento}" for="datCadastramento" />
+                        <p:calendar id="datCadastramento" pattern="MM/dd/yyyy" value="#{comeerjController.selected.datCadastramento}" title="#{app.EditComeerjTitle_datCadastramento}"  showOn="button"/>
+                        <p:outputLabel value="#{app.CreateComeerjLabel_indPagouInscricao}" for="indPagouInscricao" />
+                        <p:inputText id="indPagouInscricao" value="#{comeerjController.selected.indPagouInscricao}" title="#{app.CreateComeerjTitle_indPagouInscricao}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_datPagamentoInscricao}" for="datPagamentoInscricao" />
+                        <p:inputText id="datPagamentoInscricao" value="#{comeerjController.selected.datPagamentoInscricao}" title="#{app.CreateComeerjTitle_datPagamentoInscricao}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_indCompareceu}" for="indCompareceu" />
+                        <p:inputText id="indCompareceu" value="#{comeerjController.selected.indCompareceu}" title="#{app.CreateComeerjTitle_indCompareceu}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomContato4}" for="nomContato4" />
+                        <p:inputText id="nomContato4" value="#{comeerjController.selected.nomContato4}" title="#{app.CreateComeerjTitle_nomContato4}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_numContato4}" for="numContato4" />
+                        <p:inputText id="numContato4" value="#{comeerjController.selected.numContato4}" title="#{app.CreateComeerjTitle_numContato4}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_pwdSenhaCadastro}" for="pwdSenhaCadastro" />
+                        <p:inputText id="pwdSenhaCadastro" value="#{comeerjController.selected.pwdSenhaCadastro}" title="#{app.CreateComeerjTitle_pwdSenhaCadastro}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomFilhoInscritoPolo}" for="nomFilhoInscritoPolo" />
+                        <p:inputText id="nomFilhoInscritoPolo" value="#{comeerjController.selected.nomFilhoInscritoPolo}" title="#{app.CreateComeerjTitle_nomFilhoInscritoPolo}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_numTelConvenioMedico}" for="numTelConvenioMedico" />
+                        <p:inputText id="numTelConvenioMedico" value="#{comeerjController.selected.numTelConvenioMedico}" title="#{app.CreateComeerjTitle_numTelConvenioMedico}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codStatusFichaInscricao}" for="codStatusFichaInscricao" />
+                        <p:inputText id="codStatusFichaInscricao" value="#{comeerjController.selected.codStatusFichaInscricao}" title="#{app.CreateComeerjTitle_codStatusFichaInscricao}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomOutraCidadeMoradia}" for="nomOutraCidadeMoradia" />
+                        <p:inputText id="nomOutraCidadeMoradia" value="#{comeerjController.selected.nomOutraCidadeMoradia}" title="#{app.CreateComeerjTitle_nomOutraCidadeMoradia}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_nomOutraCidadeIea}" for="nomOutraCidadeIea" />
+                        <p:inputText id="nomOutraCidadeIea" value="#{comeerjController.selected.nomOutraCidadeIea}" title="#{app.CreateComeerjTitle_nomOutraCidadeIea}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_indicImportouDados}" for="indicImportouDados" />
+                        <p:inputText id="indicImportouDados" value="#{comeerjController.selected.indicImportouDados}" title="#{app.CreateComeerjTitle_indicImportouDados}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_indicPortadorNEspecial}" for="indicPortadorNEspecial" />
+                        <p:inputText id="indicPortadorNEspecial" value="#{comeerjController.selected.indicPortadorNEspecial}" title="#{app.CreateComeerjTitle_indicPortadorNEspecial}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscObservacaoNEspecial}" for="dscObservacaoNEspecial" />
+                        <p:inputText id="dscObservacaoNEspecial" value="#{comeerjController.selected.dscObservacaoNEspecial}" title="#{app.CreateComeerjTitle_dscObservacaoNEspecial}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_indicTemRespPeqCompanheiro}" for="indicTemRespPeqCompanheiro" />
+                        <p:inputText id="indicTemRespPeqCompanheiro" value="#{comeerjController.selected.indicTemRespPeqCompanheiro}" title="#{app.CreateComeerjTitle_indicTemRespPeqCompanheiro}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_numInscricaoRespPeqCompanheiro}" for="numInscricaoRespPeqCompanheiro" />
+                        <p:inputText id="numInscricaoRespPeqCompanheiro" value="#{comeerjController.selected.numInscricaoRespPeqCompanheiro}" title="#{app.CreateComeerjTitle_numInscricaoRespPeqCompanheiro}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_numInscricaoConjuge}" for="numInscricaoConjuge" />
+                        <p:inputText id="numInscricaoConjuge" value="#{comeerjController.selected.numInscricaoConjuge}" title="#{app.CreateComeerjTitle_numInscricaoConjuge}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscHabilidades}" for="dscHabilidades" />
+                        <p:inputText id="dscHabilidades" value="#{comeerjController.selected.dscHabilidades}" title="#{app.CreateComeerjTitle_dscHabilidades}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_indicTemConjuge}" for="indicTemConjuge" />
+                        <p:inputText id="indicTemConjuge" value="#{comeerjController.selected.indicTemConjuge}" title="#{app.CreateComeerjTitle_indicTemConjuge}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_codEstadoCivil}" for="codEstadoCivil" />
+                        <p:inputText id="codEstadoCivil" value="#{comeerjController.selected.codEstadoCivil}" title="#{app.CreateComeerjTitle_codEstadoCivil}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscEmailCoordenador}" for="dscEmailCoordenador" />
+                        <p:inputText id="dscEmailCoordenador" value="#{comeerjController.selected.dscEmailCoordenador}" title="#{app.CreateComeerjTitle_dscEmailCoordenador}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_indicPortadorNEduEspecial}" for="indicPortadorNEduEspecial" />
+                        <p:inputText id="indicPortadorNEduEspecial" value="#{comeerjController.selected.indicPortadorNEduEspecial}" title="#{app.CreateComeerjTitle_indicPortadorNEduEspecial}" />
+                        <p:outputLabel value="#{app.CreateComeerjLabel_dscObservacaoNEduEspecial}" for="dscObservacaoNEduEspecial" />
+                        <p:inputText id="dscObservacaoNEduEspecial" value="#{comeerjController.selected.dscObservacaoNEduEspecial}" title="#{app.CreateComeerjTitle_dscObservacaoNEduEspecial}" />
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{comeerjController.create}" value="#{home.Save}" update="display,:ComeerjListForm:datalist,:growl" oncomplete="handleSubmit(args,'ComeerjCreateDialog');"/>
-                    <p:commandButton value="#{home.Cancel}" onclick="ComeerjCreateDialog.hide()"/>
+                    <p:commandButton actionListener="#{comeerjController.create}" value="#{app.Save}" update="display,:ComeerjListForm:datalist,:growl" oncomplete="handleSubmit(args,'ComeerjCreateDialog');"/>
+                    <p:commandButton value="#{app.Cancel}" onclick="ComeerjCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

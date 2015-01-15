@@ -16,12 +16,20 @@
         <p:growl id="growl" life="3000" />
 
         <p:layout fullPage="true">
-            <p:layoutUnit position="north" size="65" header="#{home.AppName}">
+            <p:layoutUnit position="north" size="65" header="#{app.AppName}">
                 <h:form id="menuForm">
                     <p:menubar>
-                        <p:menuitem value="#{home.Home}" outcome="/index" icon="ui-icon-home"/>
-                        <p:submenu label="#{home.Maintenance}">
+                        <p:menuitem value="#{app.Home}" outcome="/template.xhtml" icon="ui-icon-home"/>
+                        <p:submenu label="#{app.Maintenance}">
                             <p:menuitem value="Comeerj" outcome="/comeerj/List.xhtml" />
+                            <p:menuitem outcome="/comeerj/List.xhtml" value="Dados Gerais"/>
+                            <p:menuitem outcome="/equipe/List.xhtml" value="Equipes"/>
+                            <p:menuitem outcome="/dadosEquipe/List.xhtml" value="Pessoas em Equipes"/>
+                            <p:menuitem outcome="/alojamento/List.xhtml" value="Alojamentos"/>
+                            <p:menuitem outcome="/alojamentoCoordenador/List.xhtml" value="Coordenadores de Alojamentos"/>
+                            <p:menuitem outcome="/alojamentoMembros/List.xhtml" value="Membros dos Alojamentos"/>
+                            <p:menuitem outcome="/turmaAlunos/List.xhtml" value="Alunos de Turmas"/>
+                            <p:menuitem outcome="/turmaEvangelizacao/List.xhtml" value="Turmas"/>
                         </p:submenu>
                     </p:menubar>
                 </h:form>

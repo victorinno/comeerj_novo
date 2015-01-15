@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TurmaAlunosEditDlg" widgetVar="TurmaAlunosEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{app.EditTurmaAlunosTitle}">
+            <h:form id="TurmaAlunosEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{turmaAlunosController.selected != null}">
+                        <p:outputLabel value="#{app.EditTurmaAlunosLabel_idturmaAlunos}" for="idturmaAlunos" />
+                        <p:inputText id="idturmaAlunos" value="#{turmaAlunosController.selected.idturmaAlunos}" title="#{app.EditTurmaAlunosTitle_idturmaAlunos}" required="true" requiredMessage="#{app.EditTurmaAlunosRequiredMessage_idturmaAlunos}"/>
+                        <p:outputLabel value="#{app.EditTurmaAlunosLabel_turma}" for="turma" />
+                        <p:selectOneMenu id="turma" value="#{turmaAlunosController.selected.turma}" >
+                            <f:selectItem itemLabel="#{app.SelectOneMessage}"/>
+                            <f:selectItems value="#{turmaEvangelizacaoController.itemsAvailableSelectOne}"
+                                           var="turmaItem"
+                                           itemValue="#{turmaItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{app.EditTurmaAlunosLabel_aluno}" for="aluno" />
+                        <p:selectOneMenu id="aluno" value="#{turmaAlunosController.selected.aluno}" >
+                            <f:selectItem itemLabel="#{app.SelectOneMessage}"/>
+                            <f:selectItems value="#{comeerjController.itemsAvailableSelectOne}"
+                                           var="alunoItem"
+                                           itemValue="#{alunoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{turmaAlunosController.update}" value="#{app.Save}" update="display,:TurmaAlunosListForm:datalist,:growl" oncomplete="handleSubmit(args, 'TurmaAlunosEditDialog');"/>
+                    <p:commandButton value="#{app.Cancel}" onclick="TurmaAlunosEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -4,19 +4,19 @@
  * and open the template in the editor.
  */
 
-package ultradata.com.comeerj.beans;
+package ultradata.com.comeerj.beans.util;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import ultradata.com.comeerj.modelo.Comeerj;
+import ultradata.com.comeerj.modelo.TurmaEvangelizacao;
 
 /**
  *
  * @author floriano.peixoto
  */
 @Stateless
-public class ComeerjFacade extends AbstractFacade<Comeerj> {
+public class TurmaEvangelizacaoFacade extends AbstractFacade<TurmaEvangelizacao> {
     @PersistenceContext(unitName = "comeerj")
     private EntityManager em;
 
@@ -25,8 +25,8 @@ public class ComeerjFacade extends AbstractFacade<Comeerj> {
         return em;
     }
 
-    public ComeerjFacade() {
-        super(Comeerj.class);
+    public TurmaEvangelizacaoFacade() {
+        super(TurmaEvangelizacao.class);
     }
     
 }

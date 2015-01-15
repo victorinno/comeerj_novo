@@ -1,4 +1,4 @@
-package ultradata.com.comeerj.managers.util;
+package ultradata.com.comeerj.managers.util.util;
 
 import java.util.List;
 import javax.faces.application.FacesMessage;

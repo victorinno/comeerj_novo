@@ -1,9 +1,9 @@
-package ultradata.com.comeerj.managers;
+package ultradata.com.comeerj.managers.util;
 
-import ultradata.com.comeerj.modelo.Comeerj;
-import ultradata.com.comeerj.managers.util.JsfUtil;
-import ultradata.com.comeerj.managers.util.JsfUtil.PersistAction;
-import ultradata.com.comeerj.beans.ComeerjFacade;
+import ultradata.com.comeerj.modelo.AlojamentoMembros;
+import ultradata.com.comeerj.managers.util.util.JsfUtil;
+import ultradata.com.comeerj.managers.util.util.JsfUtil.PersistAction;
+import ultradata.com.comeerj.beans.util.AlojamentoMembrosFacade;
 
 import java.io.Serializable;
 import java.util.List;
@@ -19,23 +19,23 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
-@Named("comeerjController")
+@Named("alojamentoMembrosController")
 @SessionScoped
-public class ComeerjController implements Serializable {
+public class AlojamentoMembrosController implements Serializable {
 
     @EJB
-    private ultradata.com.comeerj.beans.ComeerjFacade ejbFacade;
-    private List<Comeerj> items = null;
-    private Comeerj selected;
+    private ultradata.com.comeerj.beans.util.AlojamentoMembrosFacade ejbFacade;
+    private List<AlojamentoMembros> items = null;
+    private AlojamentoMembros selected;
 
-    public ComeerjController() {
+    public AlojamentoMembrosController() {
     }
 
-    public Comeerj getSelected() {
+    public AlojamentoMembros getSelected() {
         return selected;
     }
 
-    public void setSelected(Comeerj selected) {
+    public void setSelected(AlojamentoMembros selected) {
         this.selected = selected;
     }
 
@@ -45,36 +45,36 @@ public class ComeerjController implements Serializable {
     protected void initializeEmbeddableKey() {
     }
 
-    private ComeerjFacade getFacade() {
+    private AlojamentoMembrosFacade getFacade() {
         return ejbFacade;
     }
 
-    public Comeerj prepareCreate() {
-        selected = new Comeerj();
+    public AlojamentoMembros prepareCreate() {
+        selected = new AlojamentoMembros();
         initializeEmbeddableKey();
         return selected;
     }
 
     public void create() {
-        persist(PersistAction.CREATE, ResourceBundle.getBundle("/home").getString("ComeerjCreated"));
+        persist(PersistAction.CREATE, ResourceBundle.getBundle("/app").getString("AlojamentoMembrosCreated"));
         if (!JsfUtil.isValidationFailed()) {
             items = null;    // Invalidate list of items to trigger re-query.
         }
     }
 
     public void update() {
-        persist(PersistAction.UPDATE, ResourceBundle.getBundle("/home").getString("ComeerjUpdated"));
+        persist(PersistAction.UPDATE, ResourceBundle.getBundle("/app").getString("AlojamentoMembrosUpdated"));
     }
 
     public void destroy() {
-        persist(PersistAction.DELETE, ResourceBundle.getBundle("/home").getString("ComeerjDeleted"));
+        persist(PersistAction.DELETE, ResourceBundle.getBundle("/app").getString("AlojamentoMembrosDeleted"));
         if (!JsfUtil.isValidationFailed()) {
             selected = null; // Remove selection
             items = null;    // Invalidate list of items to trigger re-query.
         }
     }
 
-    public List<Comeerj> getItems() {
+    public List<AlojamentoMembros> getItems() {
         if (items == null) {
             items = getFacade().findAll();
         }
@@ -100,38 +100,38 @@ public class ComeerjController implements Serializable {
                 if (msg.length() > 0) {
                     JsfUtil.addErrorMessage(msg);
                 } else {
-                    JsfUtil.addErrorMessage(ex, ResourceBundle.getBundle("/home").getString("PersistenceErrorOccured"));
+                    JsfUtil.addErrorMessage(ex, ResourceBundle.getBundle("/app").getString("PersistenceErrorOccured"));
                 }
             } catch (Exception ex) {
                 Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
-                JsfUtil.addErrorMessage(ex, ResourceBundle.getBundle("/home").getString("PersistenceErrorOccured"));
+                JsfUtil.addErrorMessage(ex, ResourceBundle.getBundle("/app").getString("PersistenceErrorOccured"));
             }
         }
     }
 
-    public Comeerj getComeerj(java.lang.Integer id) {
+    public AlojamentoMembros getAlojamentoMembros(java.lang.Integer id) {
         return getFacade().find(id);
     }
 
-    public List<Comeerj> getItemsAvailableSelectMany() {
+    public List<AlojamentoMembros> getItemsAvailableSelectMany() {
         return getFacade().findAll();
     }
 
-    public List<Comeerj> getItemsAvailableSelectOne() {
+    public List<AlojamentoMembros> getItemsAvailableSelectOne() {
         return getFacade().findAll();
     }
 
-    @FacesConverter(forClass = Comeerj.class)
-    public static class ComeerjControllerConverter implements Converter {
+    @FacesConverter(forClass = AlojamentoMembros.class)
+    public static class AlojamentoMembrosControllerConverter implements Converter {
 
         @Override
         public Object getAsObject(FacesContext facesContext, UIComponent component, String value) {
             if (value == null || value.length() == 0) {
                 return null;
             }
-            ComeerjController controller = (ComeerjController) facesContext.getApplication().getELResolver().
-                    getValue(facesContext.getELContext(), null, "comeerjController");
-            return controller.getComeerj(getKey(value));
+            AlojamentoMembrosController controller = (AlojamentoMembrosController) facesContext.getApplication().getELResolver().
+                    getValue(facesContext.getELContext(), null, "alojamentoMembrosController");
+            return controller.getAlojamentoMembros(getKey(value));
         }
 
         java.lang.Integer getKey(String value) {
@@ -151,11 +151,11 @@ public class ComeerjController implements Serializable {
             if (object == null) {
                 return null;
             }
-            if (object instanceof Comeerj) {
-                Comeerj o = (Comeerj) object;
-                return getStringKey(o.getCodFichaInscricaoComeerjId());
+            if (object instanceof AlojamentoMembros) {
+                AlojamentoMembros o = (AlojamentoMembros) object;
+                return getStringKey(o.getIdalojamentoMembros());
             } else {
-                Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "object {0} is of type {1}; expected type: {2}", new Object[]{object, object.getClass().getName(), Comeerj.class.getName()});
+                Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "object {0} is of type {1}; expected type: {2}", new Object[]{object, object.getClass().getName(), AlojamentoMembros.class.getName()});
                 return null;
             }
         }

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="comeerj" transaction-type="JTA">
+    <jta-data-source>comeerj_1</jta-data-source>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties>  
-        <properties>  
-            <!-- DADOS CONEXAO -->  
-            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />  
-            <property name="hibernate.connection.username" value="myfinances" />  
-            <property name="hibernate.connection.password" value="sourcesphere" />  
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/sourcesphere_myfinances" />  
-            <property name="hibernate.default_schema" value="sourcesphere_myfinances"/>  
-          
-            <!-- CONFIGURACAO -->  
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />  
-            <property name="hibernate.hbm2ddl.auto" value="update" />  
-            <property name="hibernate.show_sql" value="true" />  
-            <property name="hibernate.format_sql" value="true" />  
-            <property name="hibernate.archive.autodetection" value="class" />  
-        </properties>  
+    <properties>
+      <!-- DADOS CONEXAO -->
+      <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+      <property name="hibernate.connection.username" value="root"/>
+      <property name="hibernate.connection.password" value="root"/>
+      <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3399/comeerj"/>
+      <property name="hibernate.default_schema" value="comeerj"/>
+      <!-- CONFIGURACAO -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+      <property name="hibernate.archive.autodetection" value="class"/>
+    </properties>
   </persistence-unit>
 </persistence>

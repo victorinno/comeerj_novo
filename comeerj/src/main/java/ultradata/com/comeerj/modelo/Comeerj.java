@@ -8,18 +8,21 @@ package ultradata.com.comeerj.modelo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -105,6 +108,12 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Comeerj.findByIndicPortadorNEduEspecial", query = "SELECT c FROM Comeerj c WHERE c.indicPortadorNEduEspecial = :indicPortadorNEduEspecial"),
     @NamedQuery(name = "Comeerj.findByDscObservacaoNEduEspecial", query = "SELECT c FROM Comeerj c WHERE c.dscObservacaoNEduEspecial = :dscObservacaoNEduEspecial")})
 public class Comeerj implements Serializable {
+    @OneToMany(mappedBy = "aluno")
+    private List<TurmaAlunos> turmaAlunosList;
+    @OneToMany(mappedBy = "coordenador")
+    private List<AlojamentoCoordenador> alojamentoCoordenadorList;
+    @OneToMany(mappedBy = "membro")
+    private List<AlojamentoMembros> alojamentoMembrosList;
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -325,6 +334,8 @@ public class Comeerj implements Serializable {
     @Size(max = 7)
     @Column(name = "DSC_OBSERVACAO_N_EDU_ESPECIAL")
     private String dscObservacaoNEduEspecial;
+    @OneToMany(mappedBy = "dados")
+    private List<DadosEquipe> dadosEquipeList;
 
     public Comeerj() {
     }
@@ -925,6 +936,15 @@ public class Comeerj implements Serializable {
         this.dscObservacaoNEduEspecial = dscObservacaoNEduEspecial;
     }
 
+    @XmlTransient
+    public List<DadosEquipe> getDadosEquipeList() {
+        return dadosEquipeList;
+    }
+
+    public void setDadosEquipeList(List<DadosEquipe> dadosEquipeList) {
+        this.dadosEquipeList = dadosEquipeList;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -948,6 +968,33 @@ public class Comeerj implements Serializable {
     @Override
     public String toString() {
         return "ultradata.com.comeerj.modelo.Comeerj[ codFichaInscricaoComeerjId=" + codFichaInscricaoComeerjId + " ]";
+    }
+
+    @XmlTransient
+    public List<AlojamentoMembros> getAlojamentoMembrosList() {
+        return alojamentoMembrosList;
+    }
+
+    public void setAlojamentoMembrosList(List<AlojamentoMembros> alojamentoMembrosList) {
+        this.alojamentoMembrosList = alojamentoMembrosList;
+    }
+
+    @XmlTransient
+    public List<AlojamentoCoordenador> getAlojamentoCoordenadorList() {
+        return alojamentoCoordenadorList;
+    }
+
+    public void setAlojamentoCoordenadorList(List<AlojamentoCoordenador> alojamentoCoordenadorList) {
+        this.alojamentoCoordenadorList = alojamentoCoordenadorList;
+    }
+
+    @XmlTransient
+    public List<TurmaAlunos> getTurmaAlunosList() {
+        return turmaAlunosList;
+    }
+
+    public void setTurmaAlunosList(List<TurmaAlunos> turmaAlunosList) {
+        this.turmaAlunosList = turmaAlunosList;
     }
     
 }

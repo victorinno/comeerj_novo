@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package ultradata.com.comeerj.beans;
+package ultradata.com.comeerj.beans.util;
 
 import java.util.List;
 import javax.persistence.EntityManager;

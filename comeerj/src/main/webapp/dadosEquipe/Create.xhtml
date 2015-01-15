@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DadosEquipeCreateDlg" widgetVar="DadosEquipeCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{app.CreateDadosEquipeTitle}">
+            <h:form id="DadosEquipeCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{dadosEquipeController.selected != null}">
+                        <p:outputLabel value="#{app.CreateDadosEquipeLabel_iddadosEquipe}" for="iddadosEquipe" />
+                        <p:inputText id="iddadosEquipe" value="#{dadosEquipeController.selected.iddadosEquipe}" title="#{app.CreateDadosEquipeTitle_iddadosEquipe}" required="true" requiredMessage="#{app.CreateDadosEquipeRequiredMessage_iddadosEquipe}"/>
+                        <p:outputLabel value="#{app.CreateDadosEquipeLabel_equipe}" for="equipe" />
+                        <p:selectOneMenu id="equipe" value="#{dadosEquipeController.selected.equipe}" >
+                            <f:selectItems value="#{equipeController.itemsAvailableSelectOne}"
+                                           var="equipeItem"
+                                           itemValue="#{equipeItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{app.CreateDadosEquipeLabel_dados}" for="dados" />
+                        <p:selectOneMenu id="dados" value="#{dadosEquipeController.selected.dados}" >
+                            <f:selectItems value="#{comeerjController.itemsAvailableSelectOne}"
+                                           var="dadosItem"
+                                           itemValue="#{dadosItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{dadosEquipeController.create}" value="#{app.Save}" update="display,:DadosEquipeListForm:datalist,:growl" oncomplete="handleSubmit(args,'DadosEquipeCreateDialog');"/>
+                    <p:commandButton value="#{app.Cancel}" onclick="DadosEquipeCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

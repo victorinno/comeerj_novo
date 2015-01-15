@@ -19,6 +19,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>index.comeerj</welcome-file>
+        <welcome-file>template.comeerj</welcome-file>
     </welcome-file-list>
 </web-app>
