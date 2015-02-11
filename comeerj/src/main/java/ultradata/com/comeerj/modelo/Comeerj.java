@@ -12,6 +12,8 @@ import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -117,7 +119,7 @@ public class Comeerj implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @NotNull
+    
     @Column(name = "COD_FICHA_INSCRICAO_COMEERJ_ID")
     private Integer codFichaInscricaoComeerjId;
     @Column(name = "NUM_COMEERJ")
@@ -130,9 +132,10 @@ public class Comeerj implements Serializable {
     @Size(max = 69)
     @Column(name = "DSC_TIPO_COMISSAO")
     private String dscTipoComissao;
-    @Size(max = 10)
+    
     @Column(name = "DAT_NASCIMENTO")
-    private String datNascimento;
+    @Temporal(TemporalType.DATE)
+    private Date datNascimento;
     @Size(max = 1)
     @Column(name = "DSC_PROFISSAO")
     private String dscProfissao;
@@ -384,11 +387,11 @@ public class Comeerj implements Serializable {
         this.dscTipoComissao = dscTipoComissao;
     }
 
-    public String getDatNascimento() {
+    public Date getDatNascimento() {
         return datNascimento;
     }
 
-    public void setDatNascimento(String datNascimento) {
+    public void setDatNascimento(Date datNascimento) {
         this.datNascimento = datNascimento;
     }
 

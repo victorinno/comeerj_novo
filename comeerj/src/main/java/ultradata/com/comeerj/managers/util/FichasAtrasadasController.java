@@ -13,16 +13,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.ejb.EJBException;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
-@Named("comeerjController")
-@SessionScoped
-public class ComeerjController implements Serializable {
+@Named("fichasAtrasadasController")
+@ViewScoped
+public class FichasAtrasadasController implements Serializable {
 
     @EJB
     private ultradata.com.comeerj.beans.util.ComeerjFacade ejbFacade;
@@ -80,7 +82,7 @@ public class ComeerjController implements Serializable {
         return filteredThemes;
     }
 
-    public ComeerjController() {
+    public FichasAtrasadasController() {
     }
 
     public Comeerj getSelected() {
@@ -112,6 +114,8 @@ public class ComeerjController implements Serializable {
         if (!JsfUtil.isValidationFailed()) {
             items = null;    // Invalidate list of items to trigger re-query.
         }
+        selected = new Comeerj();
+        initializeEmbeddableKey();
     }
 
     public void update() {
@@ -127,7 +131,10 @@ public class ComeerjController implements Serializable {
     }
 
     public List<Comeerj> getItems() {
-        return getFacade().findAllOrdered();
+        if (items == null) {
+            items = getFacade().findAll();
+        }
+        return items;
     }
 
     private void persist(PersistAction persistAction, String successMessage) {
@@ -163,11 +170,11 @@ public class ComeerjController implements Serializable {
     }
 
     public List<Comeerj> getItemsAvailableSelectMany() {
-        return getFacade().findAllOrdered();
+        return getFacade().findAll();
     }
 
     public List<Comeerj> getItemsAvailableSelectOne() {
-        return getFacade().findAllOrdered();
+        return getFacade().findAll();
     }
 
     @FacesConverter(forClass = Comeerj.class)
@@ -178,7 +185,7 @@ public class ComeerjController implements Serializable {
             if (value == null || value.length() == 0) {
                 return null;
             }
-            ComeerjController controller = (ComeerjController) facesContext.getApplication().getELResolver().
+            ultradata.com.comeerj.managers.util.ComeerjController controller = (ultradata.com.comeerj.managers.util.ComeerjController) facesContext.getApplication().getELResolver().
                     getValue(facesContext.getELContext(), null, "comeerjController");
             return controller.getComeerj(getKey(value));
         }

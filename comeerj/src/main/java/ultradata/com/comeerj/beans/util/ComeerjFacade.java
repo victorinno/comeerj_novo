@@ -6,6 +6,7 @@
 
 package ultradata.com.comeerj.beans.util;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,5 +29,15 @@ public class ComeerjFacade extends AbstractFacade<Comeerj> {
     public ComeerjFacade() {
         super(Comeerj.class);
     }
+
+    
+    public List<Comeerj> findAllOrdered() {  
+        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
+        cq.select(cq.from(Comeerj.class));
+        cq.orderBy(getEntityManager().getCriteriaBuilder().asc(cq.from(Comeerj.class).get("nomCompleto")));
+        return getEntityManager().createQuery(cq).getResultList();
+    }
+    
+    
     
 }

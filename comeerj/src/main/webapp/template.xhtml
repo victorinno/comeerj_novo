@@ -23,9 +23,11 @@
                         <p:submenu label="#{app.Maintenance}">
                             <p:menuitem value="Comeerj" outcome="/comeerj/List.xhtml" />
                             <p:menuitem outcome="/comeerj/List.xhtml" value="Dados Gerais"/>
+                            <p:menuitem outcome="/comeerj/Fichas_Atrasadas.xhtml" value="Fichas Atrasadas"/>
                             <p:menuitem outcome="/equipe/List.xhtml" value="Equipes"/>
                             <p:menuitem outcome="/dadosEquipe/List.xhtml" value="Pessoas em Equipes"/>
                             <p:menuitem outcome="/alojamento/List.xhtml" value="Alojamentos"/>
+                            <p:menuitem outcome="/alojamentoMembros/pickAlojamentoPessoas.xhtml" value="Pick Alojamento Pessoas"/>
                             <p:menuitem outcome="/alojamentoCoordenador/List.xhtml" value="Coordenadores de Alojamentos"/>
                             <p:menuitem outcome="/alojamentoMembros/List.xhtml" value="Membros dos Alojamentos"/>
                             <p:menuitem outcome="/turmaAlunos/List.xhtml" value="Alunos de Turmas"/>
@@ -35,9 +37,7 @@
                 </h:form>
             </p:layoutUnit>
 
-            <p:layoutUnit position="south" size="60">
-                <ui:insert name="footer"/>
-            </p:layoutUnit>
+            
 
             <p:layoutUnit position="center">
                 <ui:insert name="body"/>

@@ -12,19 +12,18 @@
             <h:form id="TurmaAlunosCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{turmaAlunosController.selected != null}">
-                        <p:outputLabel value="#{app.CreateTurmaAlunosLabel_idturmaAlunos}" for="idturmaAlunos" />
-                        <p:inputText id="idturmaAlunos" value="#{turmaAlunosController.selected.idturmaAlunos}" title="#{app.CreateTurmaAlunosTitle_idturmaAlunos}" required="true" requiredMessage="#{app.CreateTurmaAlunosRequiredMessage_idturmaAlunos}"/>
+                       
                         <p:outputLabel value="#{app.CreateTurmaAlunosLabel_turma}" for="turma" />
                         <p:selectOneMenu id="turma" value="#{turmaAlunosController.selected.turma}" >
                             <f:selectItems value="#{turmaEvangelizacaoController.itemsAvailableSelectOne}"
                                            var="turmaItem"
-                                           itemValue="#{turmaItem}"/>
+                                           itemValue="#{turmaItem}" itemLabel="#{turmaItem.nome}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{app.CreateTurmaAlunosLabel_aluno}" for="aluno" />
                         <p:selectOneMenu id="aluno" value="#{turmaAlunosController.selected.aluno}" >
                             <f:selectItems value="#{comeerjController.itemsAvailableSelectOne}"
                                            var="alunoItem"
-                                           itemValue="#{alunoItem}"/>
+                                           itemValue="#{alunoItem}" itemLabel="#{alunoItem.nomCompleto}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{turmaAlunosController.create}" value="#{app.Save}" update="display,:TurmaAlunosListForm:datalist,:growl" oncomplete="handleSubmit(args,'TurmaAlunosCreateDialog');"/>

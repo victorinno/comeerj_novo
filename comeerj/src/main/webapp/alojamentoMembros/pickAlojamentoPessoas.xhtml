@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="title">
+        Pick Alojamento Pessoas
+    </ui:define>
+
+    <ui:define name="body">
+        <h:form>
+            <p:growl id="msg" showDetail="true" escape="false" />
+
+            <h3 style="margin-top: 0">Basic PickList</h3>
+
+
+            <p:pickList id="PojoPickList" value="#{pickAlojamentoPessoanBean.comeerjDualList}" var="dados" effect="bounce"
+                        itemValue="#{dados}" itemLabel="#{dados.nomCompleto}" showSourceControls="true" showTargetControls="true" showCheckbox="true"
+                        showSourceFilter="true" showTargetFilter="true" filterMatchMode="contains" converter="ComeerjConverter" >
+
+                <f:facet name="sourceCaption">Participantes</f:facet>
+                <f:facet name="targetCaption">Seleionados</f:facet>
+
+                <p:ajax event="transfer" listener="#{pickAlojamentoPessoanBean.onTransfer}" update="msg" />
+
+
+
+                <p:column style="width:25%">
+                    <h:outputText styleClass="ui-dados ui-dados-#{dados.nomCompleto}" />
+                </p:column>
+
+                <p:column style="width:75%;">
+                    <h:outputText value="#{dados.nomCompleto}" />
+                </p:column>
+            </p:pickList>
+
+
+
+            <p:outputLabel for="alojamentos" value="Alojamento: " />
+            <p:selectOneMenu id="alojamentos" value="#{pickAlojamentoPessoanBean.alojamentoSelecionado}" immediate="true" 
+                             valueChangeListener="#{pickAlojamentoPessoanBean.onChange()}" converter="AlojamentoConverter">
+                <f:selectItems value="#{pickAlojamentoPessoanBean.alojamentos}" var="item" itemLabel="#{item.nome}" 
+                               itemValue="#{item}" />
+            </p:selectOneMenu>
+
+        </h:form>
+    </ui:define>
+
+</ui:composition>

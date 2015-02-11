@@ -12,8 +12,7 @@
             <h:form id="TurmaEvangelizacaoEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{turmaEvangelizacaoController.selected != null}">
-                        <p:outputLabel value="#{app.EditTurmaEvangelizacaoLabel_idturmaEvangelizacao}" for="idturmaEvangelizacao" />
-                        <p:inputText id="idturmaEvangelizacao" value="#{turmaEvangelizacaoController.selected.idturmaEvangelizacao}" title="#{app.EditTurmaEvangelizacaoTitle_idturmaEvangelizacao}" required="true" requiredMessage="#{app.EditTurmaEvangelizacaoRequiredMessage_idturmaEvangelizacao}"/>
+                        
                         <p:outputLabel value="#{app.EditTurmaEvangelizacaoLabel_faixa}" for="faixa" />
                         <p:inputText id="faixa" value="#{turmaEvangelizacaoController.selected.faixa}" title="#{app.EditTurmaEvangelizacaoTitle_faixa}" />
                         <p:outputLabel value="#{app.EditTurmaEvangelizacaoLabel_nome}" for="nome" />

@@ -12,20 +12,16 @@
             <h:form id="AlojamentoMembrosEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{alojamentoMembrosController.selected != null}">
-                        <p:outputLabel value="#{app.EditAlojamentoMembrosLabel_idalojamentoMembros}" for="idalojamentoMembros" />
-                        <p:inputText id="idalojamentoMembros" value="#{alojamentoMembrosController.selected.idalojamentoMembros}" title="#{app.EditAlojamentoMembrosTitle_idalojamentoMembros}" required="true" requiredMessage="#{app.EditAlojamentoMembrosRequiredMessage_idalojamentoMembros}"/>
-                        <p:outputLabel value="#{app.EditAlojamentoMembrosLabel_membro}" for="membro" />
+                        <p:outputLabel value="#{app.CreateAlojamentoMembrosLabel_membro}" for="membro" />
                         <p:selectOneMenu id="membro" value="#{alojamentoMembrosController.selected.membro}" >
-                            <f:selectItem itemLabel="#{app.SelectOneMessage}"/>
                             <f:selectItems value="#{comeerjController.itemsAvailableSelectOne}"
-                                           var="membroItem"
+                                           var="membroItem" itemLabel="#{membroItem.nomCompleto}"
                                            itemValue="#{membroItem}"/>
                         </p:selectOneMenu>
-                        <p:outputLabel value="#{app.EditAlojamentoMembrosLabel_alojamento}" for="alojamento" />
+                        <p:outputLabel value="#{app.CreateAlojamentoMembrosLabel_alojamento}" for="alojamento" />
                         <p:selectOneMenu id="alojamento" value="#{alojamentoMembrosController.selected.alojamento}" >
-                            <f:selectItem itemLabel="#{app.SelectOneMessage}"/>
                             <f:selectItems value="#{alojamentoController.itemsAvailableSelectOne}"
-                                           var="alojamentoItem"
+                                           var="alojamentoItem" itemLabel="#{alojamentoItem.nome}"
                                            itemValue="#{alojamentoItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>

@@ -37,13 +37,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{app.ListAlojamentoMembrosTitle_membro}"/>
                             </f:facet>
-                            <h:outputText value="#{item.membro}"/>
+                            <h:outputText value="#{item.membro.nomCompleto}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{app.ListAlojamentoMembrosTitle_alojamento}"/>
                             </f:facet>
-                            <h:outputText value="#{item.alojamento}"/>
+                            <h:outputText value="#{item.alojamento.nome}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{app.Create}" actionListener="#{alojamentoMembrosController.prepareCreate}" update=":AlojamentoMembrosCreateForm" oncomplete="PF('AlojamentoMembrosCreateDialog').show()"/>
