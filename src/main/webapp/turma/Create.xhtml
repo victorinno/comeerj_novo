@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TurmaCreateDlg" widgetVar="TurmaCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTurmaTitle}">
+            <h:form id="TurmaCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{turmaController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateTurmaLabel_nome}" for="nome" />
+                        <p:inputText id="nome" value="#{turmaController.selected.nome}" title="#{bundle.CreateTurmaTitle_nome}" />
+                        <p:outputLabel value="#{bundle.CreateTurmaLabel_faixa}" for="faixa" />
+                        <p:inputText id="faixa" value="#{turmaController.selected.faixa}" title="#{bundle.CreateTurmaTitle_faixa}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{turmaController.create}" value="#{bundle.Save}" update="display,:TurmaListForm:datalist,:growl" oncomplete="handleSubmit(args,'TurmaCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TurmaCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

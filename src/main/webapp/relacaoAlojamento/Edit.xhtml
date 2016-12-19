@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RelacaoAlojamentoEditDlg" widgetVar="RelacaoAlojamentoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditRelacaoAlojamentoTitle}">
+            <h:form id="RelacaoAlojamentoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{relacaoAlojamentoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditRelacaoAlojamentoLabel_idRelacaoAlojamento}" for="idRelacaoAlojamento" />
+                        <p:inputText id="idRelacaoAlojamento" value="#{relacaoAlojamentoController.selected.idRelacaoAlojamento}" title="#{bundle.EditRelacaoAlojamentoTitle_idRelacaoAlojamento}" required="true" requiredMessage="#{bundle.EditRelacaoAlojamentoRequiredMessage_idRelacaoAlojamento}"/>
+                        <p:outputLabel value="#{bundle.EditRelacaoAlojamentoLabel_indice}" for="indice" />
+                        <p:inputText id="indice" value="#{relacaoAlojamentoController.selected.indice}" title="#{bundle.EditRelacaoAlojamentoTitle_indice}" />
+                        <p:outputLabel value="#{bundle.EditRelacaoAlojamentoLabel_idAlojamento}" for="idAlojamento" />
+                        <p:selectOneMenu id="idAlojamento" value="#{relacaoAlojamentoController.selected.idAlojamento}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{alojamentoController.itemsAvailableSelectOne}"
+                                           var="idAlojamentoItem"
+                                           itemValue="#{idAlojamentoItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditRelacaoAlojamentoLabel_idRelacao}" for="idRelacao" />
+                        <p:selectOneMenu id="idRelacao" value="#{relacaoAlojamentoController.selected.idRelacao}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{relacaoController.itemsAvailableSelectOne}"
+                                           var="idRelacaoItem"
+                                           itemValue="#{idRelacaoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{relacaoAlojamentoController.update}" value="#{bundle.Save}" update="display,:RelacaoAlojamentoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'RelacaoAlojamentoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="RelacaoAlojamentoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

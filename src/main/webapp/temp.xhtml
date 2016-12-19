@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputScript library="js" name="jsfcrud.js"/>
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+        <p:growl id="growl" life="3000" />
+
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="65" header="#{bundle.AppName}">
+                <h:form id="menuForm">
+                    <p:menubar>
+                        <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
+                        <p:submenu label="Manutenção">
+                            <p:menuitem value="Cadastro de Nome do Alojamento" outcome="/alojamento/List.xhtml" />
+                            <p:menuitem value="Cadastro de Equipes" outcome="/equipe/List.xhtml" />
+                            <p:menuitem value="Relacao de Confraternistar" outcome="/relacao/List.xhtml" />
+                            <p:menuitem value="Colocar Pessoas nos Alojamentos" outcome="/relacaoAlojamento/List.xhtml" />
+                            <p:menuitem value="Colocar Pessoas nas Equipes" outcome="/relacaoEquipe/List.xhtml" />
+                            <p:menuitem value="Cadastro de Turma" outcome="/turma/List.xhtml" />
+                            <p:menuitem value="Colocar Evangelizador nas Turmas" outcome="/turmaEvangelizadores/List.xhtml" />
+                            <p:menuitem value="Colocar Confraternistas nas Trumas" outcome="/turmaEvangelizandos/List.xhtml" />
+                            <p:menuitem value="Presença Confraternista" outcome="/presenca/lista_presenca_confra.xhtml" />
+                        </p:submenu>
+                    </p:menubar>
+                </h:form>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="60">
+                <ui:insert name="footer"/>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <ui:insert name="body"/>
+            </p:layoutUnit>
+
+        </p:layout>
+
+    </h:body>
+
+</html>

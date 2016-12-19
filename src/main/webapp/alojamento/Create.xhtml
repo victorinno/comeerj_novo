@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AlojamentoCreateDlg" widgetVar="AlojamentoCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateAlojamentoTitle}">
+            <h:form id="AlojamentoCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{alojamentoController.selected != null}">
+                        
+                        <p:outputLabel value="#{bundle.CreateAlojamentoLabel_nomeAlojamento}" for="nomeAlojamento" />
+                        <p:inputText id="nomeAlojamento" value="#{alojamentoController.selected.nomeAlojamento}" title="#{bundle.CreateAlojamentoTitle_nomeAlojamento}" />
+                        <p:outputLabel value="#{bundle.CreateAlojamentoLabel_sala}" for="sala" />
+                        <p:inputText id="sala" value="#{alojamentoController.selected.sala}" title="#{bundle.CreateAlojamentoTitle_sala}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{alojamentoController.create}" value="#{bundle.Save}" update="display,:AlojamentoListForm:datalist,:growl" oncomplete="handleSubmit(args,'AlojamentoCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="AlojamentoCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

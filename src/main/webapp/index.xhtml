@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./temp.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="title">
+        title
+    </ui:define>
+
+    <ui:define name="footer">
+        footer
+    </ui:define>
+
+    <ui:define name="body">
+        <h:form>
+            <p:growl id="msgs" showDetail="true" />
+
+            <p:dashboard id="board" model="#{dashBoard.model}">
+                <p:ajax event="reorder" listener="#{dashBoard.handleReorder}" update="msgs" />
+
+                <p:panel id="invalidos" header="invalidos">
+                    <p:dataList value="#{dashBoard.invalidosList}" var="invalidos" type="ordered">
+                        <f:facet name="header">
+                            Inválidos
+                        </f:facet>
+                        #{invalidos}
+                    </p:dataList>
+                </p:panel>
+
+
+            </p:dashboard>
+
+            <div style="clear:both" />
+        </h:form>
+    </ui:define>
+
+</ui:composition>

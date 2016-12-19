@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RelacaoCreateDlg" widgetVar="RelacaoCreateDialog" 
+                  height="700" width="1280"
+                  modal="true" resizable="true" appendTo="@(body)" header="#{bundle.CreateRelacaoTitle}" >
+
+
+            <f:view>
+
+
+                <h:form id="RelacaoCreateForm">
+                    <p:scrollPanel id="display" mode="native" style="height:600px; width: 1200px;" >
+                        <h1><h:outputText value="Create/Edit"/></h1>
+                        <p:panelGrid columns="6" >
+
+                            <p:outputLabel value="CodFichaInscricaoComeerjId:" for="codFichaInscricaoComeerjId" />
+                            <p:inputText id="codFichaInscricaoComeerjId" value="#{relacaoController.selected.codFichaInscricaoComeerjId}" title="CodFichaInscricaoComeerjId" required="true" requiredMessage="The CodFichaInscricaoComeerjId field is required."/>
+                            <p:outputLabel value="NumComeerj:" for="numComeerj" />
+                            <p:inputText id="numComeerj" value="#{relacaoController.selected.numComeerj}" title="NumComeerj" />
+                            <p:outputLabel value="NumFichaInscricao:" for="numFichaInscricao" />
+                            <p:inputText id="numFichaInscricao" value="#{relacaoController.selected.numFichaInscricao}" title="NumFichaInscricao" />
+                            <p:outputLabel value="DscTipoParticipacao:" for="dscTipoParticipacao" />
+                            <p:inputTextarea rows="4" cols="30" id="dscTipoParticipacao" value="#{relacaoController.selected.dscTipoParticipacao}" title="DscTipoParticipacao" />
+                            <p:outputLabel value="DscTipoComissao:" for="dscTipoComissao" />
+                            <p:inputTextarea rows="4" cols="30" id="dscTipoComissao" value="#{relacaoController.selected.dscTipoComissao}" title="DscTipoComissao" />
+                            <p:outputLabel value="Xa:" for="xa" />
+                            <p:inputTextarea rows="4" cols="30" id="xa" value="#{relacaoController.selected.dscNome}" title="Xa" />
+                            <p:outputLabel value="DatNascimento:" for="datNascimento" />
+                            <p:inputTextarea rows="4" cols="30" id="datNascimento" value="#{relacaoController.selected.datNascimento}" title="DatNascimento" />
+
+                            <p:outputLabel value="CodOpcao1Polo:" for="codOpcao1Polo" />
+                            <p:inputTextarea rows="4" cols="30" id="codOpcao1Polo" value="#{relacaoController.selected.codOpcao1Polo}" title="CodOpcao1Polo" />
+                            <p:outputLabel value="CodOpcao2Polo:" for="codOpcao2Polo" />
+                            <p:inputTextarea rows="4" cols="30" id="codOpcao2Polo" value="#{relacaoController.selected.codOpcao2Polo}" title="CodOpcao2Polo" />
+                            <p:outputLabel value="CodSexo:" for="codSexo" />
+                            <p:inputTextarea rows="4" cols="30" id="codSexo" value="#{relacaoController.selected.codSexo}" title="CodSexo" />
+                            <p:outputLabel value="NomCracha:" for="nomCracha" />
+                            <p:inputTextarea rows="4" cols="30" id="nomCracha" value="#{relacaoController.selected.nomCracha}" title="NomCracha" />
+
+                            <p:outputLabel value="CodTipoContato1:" for="codTipoContato1" />
+                            <p:inputTextarea rows="4" cols="30" id="codTipoContato1" value="#{relacaoController.selected.codTipoContato1}" title="CodTipoContato1" />
+
+                            <p:outputLabel value="numContato1:" for="numContato1" />
+                            <p:inputText  id="numContato1" value="#{relacaoController.selected.numContato1}" title="numContato1" />
+
+
+                            <p:outputLabel value="DscEmail:" for="dscEmail" />
+                            <p:inputText id="dscEmail" value="#{relacaoController.selected.dscEmail}" title="dscEmail" />
+                            <p:outputLabel value="IndFazUsoMedicacao:" for="indFazUsoMedicacao" />
+                            <p:inputTextarea rows="4" cols="30" id="indFazUsoMedicacao" value="#{relacaoController.selected.indFazUsoMedicacao}" title="IndFazUsoMedicacao" />
+                            <p:outputLabel value="DscListaMedicamento:" for="dscListaMedicamento" />
+                            <p:inputTextarea rows="4" cols="30" id="dscListaMedicamento" value="#{relacaoController.selected.dscListaMedicamento}" title="DscListaMedicamento" />
+                            <p:outputLabel value="IndTemConvenioMedico:" for="indTemConvenioMedico" />
+                            <p:inputTextarea rows="4" cols="30" id="indTemConvenioMedico" value="#{relacaoController.selected.indTemConvenioMedico}" title="IndTemConvenioMedico" />
+                            <p:outputLabel value="NomConvenioMedico:" for="nomConvenioMedico" />
+                            <p:inputTextarea rows="4" cols="30" id="nomConvenioMedico" value="#{relacaoController.selected.nomConvenioMedico}" title="NomConvenioMedico" />
+                            <p:outputLabel value="IndVegetariano:" for="indVegetariano" />
+                            <p:inputTextarea rows="4" cols="30" id="indVegetariano" value="#{relacaoController.selected.indVegetariano}" title="IndVegetariano" />
+                            <p:outputLabel value="DscListaAlimentacao:" for="dscListaAlimentacao" />
+                            <p:inputTextarea rows="4" cols="30" id="dscListaAlimentacao" value="#{relacaoController.selected.dscListaAlimentacao}" title="DscListaAlimentacao" />
+                            <p:outputLabel value="IndAlergico:" for="indAlergico" />
+                            <p:inputTextarea rows="4" cols="30" id="indAlergico" value="#{relacaoController.selected.indAlergico}" title="IndAlergico" />
+                            <p:outputLabel value="DscListaAlergia:" for="dscListaAlergia" />
+                            <p:inputTextarea rows="4" cols="30" id="dscListaAlergia" value="#{relacaoController.selected.dscListaAlergia}" title="DscListaAlergia" />
+                            <p:outputLabel value="NomAutorizacaoMenor:" for="nomAutorizacaoMenor" />
+                            <p:inputTextarea rows="4" cols="30" id="nomAutorizacaoMenor" value="#{relacaoController.selected.nomAutorizacaoMenor}" title="NomAutorizacaoMenor" />
+                            <p:outputLabel value="NumIdentidadeAutorizacaoMenor:" for="numIdentidadeAutorizacaoMenor" />
+                            <p:inputTextarea rows="4" cols="30" id="numIdentidadeAutorizacaoMenor" value="#{relacaoController.selected.numIdentidadeAutorizacaoMenor}" title="NumIdentidadeAutorizacaoMenor" />
+                            <p:outputLabel value="NomIeParticipa:" for="nomIeParticipa" />
+                            <p:inputTextarea rows="4" cols="30" id="nomIeParticipa" value="#{relacaoController.selected.nomIeParticipa}" title="NomIeParticipa" />
+
+
+
+                            <p:outputLabel value="IndicPortadorNEduEspecial:" for="indicPortadorNEduEspecial" />
+                            <p:inputTextarea rows="4" cols="30" id="indicPortadorNEduEspecial" value="#{relacaoController.selected.indicPortadorNEduEspecial}" title="IndicPortadorNEduEspecial" />
+                            <p:outputLabel value="DscObservacaoNEduEspecial:" for="dscObservacaoNEduEspecial" />
+                            <p:inputTextarea rows="4" cols="30" id="dscObservacaoNEduEspecial" value="#{relacaoController.selected.dscObservacaoNEduEspecial}" title="DscObservacaoNEduEspecial" />
+                            <p:outputLabel value="Idade:" for="idade" />
+                            <p:inputTextarea rows="4" cols="30" id="idade" value="#{relacaoController.selected.idade}" title="Idade" />
+                            <p:outputLabel value="Faixa:" for="faixa" />
+                            <p:inputTextarea rows="4" cols="30" id="faixa" value="#{relacaoController.selected.faixa}" title="Faixa" />
+                        </p:panelGrid>
+                    </p:scrollPanel>
+                    <p:commandButton actionListener="#{relacaoController.create}" value="#{bundle.Save}" update="display,:RelacaoListForm:datalist,:growl" oncomplete="handleSubmit(args,'RelacaoCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="RelacaoCreateDialog.hide()"/>
+                </h:form>
+            </f:view>
+
+
+
+        </p:dialog>
+
+    </ui:composition>
+</html>

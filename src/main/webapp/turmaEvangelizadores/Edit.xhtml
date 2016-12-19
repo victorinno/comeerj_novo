@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TurmaEvangelizadoresEditDlg" widgetVar="TurmaEvangelizadoresEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditTurmaEvangelizadoresTitle}">
+            <h:form id="TurmaEvangelizadoresEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{turmaEvangelizadoresController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditTurmaEvangelizadoresLabel_idTurmaEvangelizadores}" for="idTurmaEvangelizadores" />
+                        <p:inputText id="idTurmaEvangelizadores" value="#{turmaEvangelizadoresController.selected.idTurmaEvangelizadores}" title="#{bundle.EditTurmaEvangelizadoresTitle_idTurmaEvangelizadores}" required="true" requiredMessage="#{bundle.EditTurmaEvangelizadoresRequiredMessage_idTurmaEvangelizadores}"/>
+                        <p:outputLabel value="#{bundle.EditTurmaEvangelizadoresLabel_idRelacao}" for="idRelacao" />
+                        <p:selectOneMenu id="idRelacao" value="#{turmaEvangelizadoresController.selected.idRelacao}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{relacaoController.itemsAvailableSelectOne}"
+                                           var="idRelacaoItem"
+                                           itemValue="#{idRelacaoItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditTurmaEvangelizadoresLabel_idTurma}" for="idTurma" />
+                        <p:selectOneMenu id="idTurma" value="#{turmaEvangelizadoresController.selected.idTurma}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{turmaController.itemsAvailableSelectOne}"
+                                           var="idTurmaItem"
+                                           itemValue="#{idTurmaItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{turmaEvangelizadoresController.update}" value="#{bundle.Save}" update="display,:TurmaEvangelizadoresListForm:datalist,:growl" oncomplete="handleSubmit(args, 'TurmaEvangelizadoresEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TurmaEvangelizadoresEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

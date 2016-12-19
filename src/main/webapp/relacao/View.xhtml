@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RelacaoViewDlg" widgetVar="RelacaoViewDialog" height="630" width="1220" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewRelacaoTitle}">
+            <h:form id="RelacaoViewForm">
+                <p:scrollPanel id="display" mode="native" style="height:600px; width: 1200px;" >
+                    <h:panelGroup id="display1">
+                        <p:panelGrid columns="2" rendered="#{relacaoController.selected != null}">
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codFichaInscricaoComeerjId}"/>
+                            <h:outputText value="#{relacaoController.selected.codFichaInscricaoComeerjId}" title="#{bundle.ViewRelacaoTitle_codFichaInscricaoComeerjId}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_numComeerj}"/>
+                            <h:outputText value="#{relacaoController.selected.numComeerj}" title="#{bundle.ViewRelacaoTitle_numComeerj}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_numFichaInscricao}"/>
+                            <h:outputText value="#{relacaoController.selected.numFichaInscricao}" title="#{bundle.ViewRelacaoTitle_numFichaInscricao}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscTipoParticipacao}"/>
+                            <h:outputText value="#{relacaoController.selected.dscTipoParticipacao}" title="#{bundle.ViewRelacaoTitle_dscTipoParticipacao}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscTipoComissao}"/>
+                            <h:outputText value="#{relacaoController.selected.dscTipoComissao}" title="#{bundle.ViewRelacaoTitle_dscTipoComissao}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_xa}"/>
+                            <h:outputText value="#{relacaoController.selected.dscNome}" title="#{bundle.ViewRelacaoTitle_xa}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_datNascimento}"/>
+                            <h:outputText value="#{relacaoController.selected.datNascimento}" title="#{bundle.ViewRelacaoTitle_datNascimento}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscProfissao}"/>
+                            <h:outputText value="#{relacaoController.selected.dscProfissao}" title="#{bundle.ViewRelacaoTitle_dscProfissao}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codOpcao1Polo}"/>
+                            <h:outputText value="#{relacaoController.selected.codOpcao1Polo}" title="#{bundle.ViewRelacaoTitle_codOpcao1Polo}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codOpcao2Polo}"/>
+                            <h:outputText value="#{relacaoController.selected.codOpcao2Polo}" title="#{bundle.ViewRelacaoTitle_codOpcao2Polo}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codSexo}"/>
+                            <h:outputText value="#{relacaoController.selected.codSexo}" title="#{bundle.ViewRelacaoTitle_codSexo}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_nomCracha}"/>
+                            <h:outputText value="#{relacaoController.selected.nomCracha}" title="#{bundle.ViewRelacaoTitle_nomCracha}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscEnderecoMoradia}"/>
+                            <h:outputText value="#{relacaoController.selected.dscEnderecoMoradia}" title="#{bundle.ViewRelacaoTitle_dscEnderecoMoradia}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscComplementoMoradia}"/>
+                            <h:outputText value="#{relacaoController.selected.dscComplementoMoradia}" title="#{bundle.ViewRelacaoTitle_dscComplementoMoradia}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_nomBairroMoradia}"/>
+                            <h:outputText value="#{relacaoController.selected.nomBairroMoradia}" title="#{bundle.ViewRelacaoTitle_nomBairroMoradia}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codCepMoradia}"/>
+                            <h:outputText value="#{relacaoController.selected.codCepMoradia}" title="#{bundle.ViewRelacaoTitle_codCepMoradia}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_nomCidadeMoradia}"/>
+                            <h:outputText value="#{relacaoController.selected.nomCidadeMoradia}" title="#{bundle.ViewRelacaoTitle_nomCidadeMoradia}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_sigUfMoradia}"/>
+                            <h:outputText value="#{relacaoController.selected.sigUfMoradia}" title="#{bundle.ViewRelacaoTitle_sigUfMoradia}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codTipoContato1}"/>
+                            <h:outputText value="#{relacaoController.selected.codTipoContato1}" title="#{bundle.ViewRelacaoTitle_codTipoContato1}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_numContato1}"/>
+                            <h:outputText value="#{relacaoController.selected.numContato1}" title="#{bundle.ViewRelacaoTitle_numContato1}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codTipoContato2}"/>
+                            <h:outputText value="#{relacaoController.selected.codTipoContato2}" title="#{bundle.ViewRelacaoTitle_codTipoContato2}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_numContato2}"/>
+                            <h:outputText value="#{relacaoController.selected.numContato2}" title="#{bundle.ViewRelacaoTitle_numContato2}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codTipoContato3}"/>
+                            <h:outputText value="#{relacaoController.selected.codTipoContato3}" title="#{bundle.ViewRelacaoTitle_codTipoContato3}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_numContato3}"/>
+                            <h:outputText value="#{relacaoController.selected.numContato3}" title="#{bundle.ViewRelacaoTitle_numContato3}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscEmail}"/>
+                            <h:outputText value="#{relacaoController.selected.dscEmail}" title="#{bundle.ViewRelacaoTitle_dscEmail}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_indOutraComeerj}"/>
+                            <h:outputText value="#{relacaoController.selected.indOutraComeerj}" title="#{bundle.ViewRelacaoTitle_indOutraComeerj}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_qtdOutraComeerj}"/>
+                            <h:outputText value="#{relacaoController.selected.qtdOutraComeerj}" title="#{bundle.ViewRelacaoTitle_qtdOutraComeerj}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_indFazUsoMedicacao}"/>
+                            <h:outputText value="#{relacaoController.selected.indFazUsoMedicacao}" title="#{bundle.ViewRelacaoTitle_indFazUsoMedicacao}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscListaMedicamento}"/>
+                            <h:outputText value="#{relacaoController.selected.dscListaMedicamento}" title="#{bundle.ViewRelacaoTitle_dscListaMedicamento}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_indTemConvenioMedico}"/>
+                            <h:outputText value="#{relacaoController.selected.indTemConvenioMedico}" title="#{bundle.ViewRelacaoTitle_indTemConvenioMedico}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_nomConvenioMedico}"/>
+                            <h:outputText value="#{relacaoController.selected.nomConvenioMedico}" title="#{bundle.ViewRelacaoTitle_nomConvenioMedico}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_indVegetariano}"/>
+                            <h:outputText value="#{relacaoController.selected.indVegetariano}" title="#{bundle.ViewRelacaoTitle_indVegetariano}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscListaAlimentacao}"/>
+                            <h:outputText value="#{relacaoController.selected.dscListaAlimentacao}" title="#{bundle.ViewRelacaoTitle_dscListaAlimentacao}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_indAlergico}"/>
+                            <h:outputText value="#{relacaoController.selected.indAlergico}" title="#{bundle.ViewRelacaoTitle_indAlergico}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscListaAlergia}"/>
+                            <h:outputText value="#{relacaoController.selected.dscListaAlergia}" title="#{bundle.ViewRelacaoTitle_dscListaAlergia}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_nomAutorizacaoMenor}"/>
+                            <h:outputText value="#{relacaoController.selected.nomAutorizacaoMenor}" title="#{bundle.ViewRelacaoTitle_nomAutorizacaoMenor}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_numIdentidadeAutorizacaoMenor}"/>
+                            <h:outputText value="#{relacaoController.selected.numIdentidadeAutorizacaoMenor}" title="#{bundle.ViewRelacaoTitle_numIdentidadeAutorizacaoMenor}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_nomIeParticipa}"/>
+                            <h:outputText value="#{relacaoController.selected.nomIeParticipa}" title="#{bundle.ViewRelacaoTitle_nomIeParticipa}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_numCeuIea}"/>
+                            <h:outputText value="#{relacaoController.selected.numCeuIea}" title="#{bundle.ViewRelacaoTitle_numCeuIea}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscEnderecoIea}"/>
+                            <h:outputText value="#{relacaoController.selected.dscEnderecoIea}" title="#{bundle.ViewRelacaoTitle_dscEnderecoIea}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_nomBairroIea}"/>
+                            <h:outputText value="#{relacaoController.selected.nomBairroIea}" title="#{bundle.ViewRelacaoTitle_nomBairroIea}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codCepIea}"/>
+                            <h:outputText value="#{relacaoController.selected.codCepIea}" title="#{bundle.ViewRelacaoTitle_codCepIea}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_nomCidadeIea}"/>
+                            <h:outputText value="#{relacaoController.selected.nomCidadeIea}" title="#{bundle.ViewRelacaoTitle_nomCidadeIea}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_sigUfIea}"/>
+                            <h:outputText value="#{relacaoController.selected.sigUfIea}" title="#{bundle.ViewRelacaoTitle_sigUfIea}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codTipoContatoIea}"/>
+                            <h:outputText value="#{relacaoController.selected.codTipoContatoIea}" title="#{bundle.ViewRelacaoTitle_codTipoContatoIea}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_numContatoIea}"/>
+                            <h:outputText value="#{relacaoController.selected.numContatoIea}" title="#{bundle.ViewRelacaoTitle_numContatoIea}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscDiaReuniaoJuventude}"/>
+                            <h:outputText value="#{relacaoController.selected.dscDiaReuniaoJuventude}" title="#{bundle.ViewRelacaoTitle_dscDiaReuniaoJuventude}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscHorarioReuniaoJuventude}"/>
+                            <h:outputText value="#{relacaoController.selected.dscHorarioReuniaoJuventude}" title="#{bundle.ViewRelacaoTitle_dscHorarioReuniaoJuventude}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codTipoParticipacaoIea}"/>
+                            <h:outputText value="#{relacaoController.selected.codTipoParticipacaoIea}" title="#{bundle.ViewRelacaoTitle_codTipoParticipacaoIea}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscOutraParticipacao}"/>
+                            <h:outputText value="#{relacaoController.selected.dscOutraParticipacao}" title="#{bundle.ViewRelacaoTitle_dscOutraParticipacao}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_datCadastramento}"/>
+                            <h:outputText value="#{relacaoController.selected.datCadastramento}" title="#{bundle.ViewRelacaoTitle_datCadastramento}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_indPagouInscricao}"/>
+                            <h:outputText value="#{relacaoController.selected.indPagouInscricao}" title="#{bundle.ViewRelacaoTitle_indPagouInscricao}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_datPagamentoInscricao}"/>
+                            <h:outputText value="#{relacaoController.selected.datPagamentoInscricao}" title="#{bundle.ViewRelacaoTitle_datPagamentoInscricao}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_indCompareceu}"/>
+                            <h:outputText value="#{relacaoController.selected.indCompareceu}" title="#{bundle.ViewRelacaoTitle_indCompareceu}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_nomContato4}"/>
+                            <h:outputText value="#{relacaoController.selected.nomContato4}" title="#{bundle.ViewRelacaoTitle_nomContato4}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_numContato4}"/>
+                            <h:outputText value="#{relacaoController.selected.numContato4}" title="#{bundle.ViewRelacaoTitle_numContato4}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_pwdSenhaCadastro}"/>
+                            <h:outputText value="#{relacaoController.selected.pwdSenhaCadastro}" title="#{bundle.ViewRelacaoTitle_pwdSenhaCadastro}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_nomFilhoInscritoPolo}"/>
+                            <h:outputText value="#{relacaoController.selected.nomFilhoInscritoPolo}" title="#{bundle.ViewRelacaoTitle_nomFilhoInscritoPolo}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_numTelConvenioMedico}"/>
+                            <h:outputText value="#{relacaoController.selected.numTelConvenioMedico}" title="#{bundle.ViewRelacaoTitle_numTelConvenioMedico}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codStatusFichaInscricao}"/>
+                            <h:outputText value="#{relacaoController.selected.codStatusFichaInscricao}" title="#{bundle.ViewRelacaoTitle_codStatusFichaInscricao}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_nomOutraCidadeMoradia}"/>
+                            <h:outputText value="#{relacaoController.selected.nomOutraCidadeMoradia}" title="#{bundle.ViewRelacaoTitle_nomOutraCidadeMoradia}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_nomOutraCidadeIea}"/>
+                            <h:outputText value="#{relacaoController.selected.nomOutraCidadeIea}" title="#{bundle.ViewRelacaoTitle_nomOutraCidadeIea}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_indicImportouDados}"/>
+                            <h:outputText value="#{relacaoController.selected.indicImportouDados}" title="#{bundle.ViewRelacaoTitle_indicImportouDados}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_indicPortadorNEspecial}"/>
+                            <h:outputText value="#{relacaoController.selected.indicPortadorNEspecial}" title="#{bundle.ViewRelacaoTitle_indicPortadorNEspecial}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscObservacaoNEspecial}"/>
+                            <h:outputText value="#{relacaoController.selected.dscObservacaoNEspecial}" title="#{bundle.ViewRelacaoTitle_dscObservacaoNEspecial}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_indicTemRespPeqCompanheiro}"/>
+                            <h:outputText value="#{relacaoController.selected.indicTemRespPeqCompanheiro}" title="#{bundle.ViewRelacaoTitle_indicTemRespPeqCompanheiro}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_numInscricaoRespPeqCompanheiro}"/>
+                            <h:outputText value="#{relacaoController.selected.numInscricaoRespPeqCompanheiro}" title="#{bundle.ViewRelacaoTitle_numInscricaoRespPeqCompanheiro}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_numInscricaoConjuge}"/>
+                            <h:outputText value="#{relacaoController.selected.numInscricaoConjuge}" title="#{bundle.ViewRelacaoTitle_numInscricaoConjuge}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscHabilidades}"/>
+                            <h:outputText value="#{relacaoController.selected.dscHabilidades}" title="#{bundle.ViewRelacaoTitle_dscHabilidades}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_indicTemConjuge}"/>
+                            <h:outputText value="#{relacaoController.selected.indicTemConjuge}" title="#{bundle.ViewRelacaoTitle_indicTemConjuge}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_codEstadoCivil}"/>
+                            <h:outputText value="#{relacaoController.selected.codEstadoCivil}" title="#{bundle.ViewRelacaoTitle_codEstadoCivil}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscEmailCoordenador}"/>
+                            <h:outputText value="#{relacaoController.selected.dscEmailCoordenador}" title="#{bundle.ViewRelacaoTitle_dscEmailCoordenador}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_indicPortadorNEduEspecial}"/>
+                            <h:outputText value="#{relacaoController.selected.indicPortadorNEduEspecial}" title="#{bundle.ViewRelacaoTitle_indicPortadorNEduEspecial}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_dscObservacaoNEduEspecial}"/>
+                            <h:outputText value="#{relacaoController.selected.dscObservacaoNEduEspecial}" title="#{bundle.ViewRelacaoTitle_dscObservacaoNEduEspecial}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_idade}"/>
+                            <h:outputText value="#{relacaoController.selected.idade}" title="#{bundle.ViewRelacaoTitle_idade}"/>
+                            <h:outputText value="#{bundle.ViewRelacaoLabel_faixa}"/>
+                            <h:outputText value="#{relacaoController.selected.faixa}" title="#{bundle.ViewRelacaoTitle_faixa}"/>
+                        </p:panelGrid>
+                        <p:commandButton value="#{bundle.Close}" onclick="RelacaoViewDialog.hide()"/>
+                    </h:panelGroup>
+                </p:scrollPanel>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
