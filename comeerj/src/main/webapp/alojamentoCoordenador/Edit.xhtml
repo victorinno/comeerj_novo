@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AlojamentoCoordenadorEditDlg" widgetVar="AlojamentoCoordenadorEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{app.EditAlojamentoCoordenadorTitle}">
+            <h:form id="AlojamentoCoordenadorEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{alojamentoCoordenadorController.selected != null}">
+                        <p:outputLabel value="#{app.EditAlojamentoCoordenadorLabel_idalojamentoCoordenador}" for="idalojamentoCoordenador" />
+                        <p:inputText id="idalojamentoCoordenador" value="#{alojamentoCoordenadorController.selected.idalojamentoCoordenador}" title="#{app.EditAlojamentoCoordenadorTitle_idalojamentoCoordenador}" required="true" requiredMessage="#{app.EditAlojamentoCoordenadorRequiredMessage_idalojamentoCoordenador}"/>
+                        <p:outputLabel value="#{app.EditAlojamentoCoordenadorLabel_coordenador}" for="coordenador" />
+                        <p:selectOneMenu id="coordenador" value="#{alojamentoCoordenadorController.selected.coordenador}" >
+                            <f:selectItem itemLabel="#{app.SelectOneMessage}"/>
+                            <f:selectItems value="#{comeerjController.itemsAvailableSelectOne}"
+                                           var="coordenadorItem"
+                                           itemValue="#{coordenadorItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{app.EditAlojamentoCoordenadorLabel_alojamento}" for="alojamento" />
+                        <p:selectOneMenu id="alojamento" value="#{alojamentoCoordenadorController.selected.alojamento}" >
+                            <f:selectItem itemLabel="#{app.SelectOneMessage}"/>
+                            <f:selectItems value="#{alojamentoController.itemsAvailableSelectOne}"
+                                           var="alojamentoItem"
+                                           itemValue="#{alojamentoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{alojamentoCoordenadorController.update}" value="#{app.Save}" update="display,:AlojamentoCoordenadorListForm:datalist,:growl" oncomplete="handleSubmit(args, 'AlojamentoCoordenadorEditDialog');"/>
+                    <p:commandButton value="#{app.Cancel}" onclick="AlojamentoCoordenadorEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

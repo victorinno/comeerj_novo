@@ -1,0 +1,72 @@
+CREATE  TABLE IF NOT EXISTS `comeerj`.`alojamentos` (
+  `idalojamentos` INT(11) NOT NULL AUTO_INCREMENT ,
+  `nome` VARCHAR(255) NULL DEFAULT NULL ,
+  `responsavel` INT(11) NULL DEFAULT NULL ,
+  PRIMARY KEY (`idalojamentos`) )
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+
+CREATE  TABLE IF NOT EXISTS `comeerj`.`dados_alojamentos` (
+  `iddados_alojamentos` INT(11) NOT NULL AUTO_INCREMENT ,
+  `dado` INT(11) NULL DEFAULT NULL ,
+  `alojamento` INT(11) NULL DEFAULT NULL ,
+  PRIMARY KEY (`iddados_alojamentos`) ,
+  UNIQUE INDEX `uk_dados_alojamentos` (`alojamento` ASC, `dado` ASC) ,
+  INDEX `alojamento_idx` (`alojamento` ASC) ,
+  INDEX `dados_idx` (`dado` ASC) ,
+  CONSTRAINT `alojamento`
+    FOREIGN KEY (`alojamento` )
+    REFERENCES `comeerj`.`alojamentos` (`idalojamentos` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `dados`
+    FOREIGN KEY (`dado` )
+    REFERENCES `comeerj`.`comeerj` (`COD_FICHA_INSCRICAO_COMEERJ_ID` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+
+CREATE  TABLE IF NOT EXISTS `comeerj`.`dados_alojamentos` (
+  `iddados_alojamentos` INT(11) NOT NULL AUTO_INCREMENT ,
+  `dado` INT(11) NULL DEFAULT NULL ,
+  `alojamento` INT(11) NULL DEFAULT NULL ,
+  PRIMARY KEY (`iddados_alojamentos`) ,
+  UNIQUE INDEX `uk_dados_alojamentos` (`alojamento` ASC, `dado` ASC) ,
+  INDEX `alojamento_idx` (`alojamento` ASC) ,
+  INDEX `dados_idx` (`dado` ASC) ,
+  CONSTRAINT `alojamento`
+    FOREIGN KEY (`alojamento` )
+    REFERENCES `comeerj`.`alojamentos` (`idalojamentos` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `dados`
+    FOREIGN KEY (`dado` )
+    REFERENCES `comeerj`.`comeerj` (`COD_FICHA_INSCRICAO_COMEERJ_ID` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+
+CREATE  TABLE IF NOT EXISTS `comeerj`.`dados_equipe` (
+  `iddados_equipe` INT(11) NOT NULL AUTO_INCREMENT ,
+  `dados` INT(11) NULL DEFAULT NULL ,
+  `equipe` INT(11) NULL DEFAULT NULL ,
+  PRIMARY KEY (`iddados_equipe`) ,
+  UNIQUE INDEX `uk_dados_equipe` (`dados` ASC, `equipe` ASC) ,
+  INDEX `dados_idx` (`dados` ASC) ,
+  INDEX `equipe_idx` (`equipe` ASC) ,
+  CONSTRAINT `dados1`
+    FOREIGN KEY (`dados` )
+    REFERENCES `comeerj`.`comeerj` (`COD_FICHA_INSCRICAO_COMEERJ_ID` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `equipe`
+    FOREIGN KEY (`equipe` )
+    REFERENCES `comeerj`.`equipe` (`idEquipe` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 160
+DEFAULT CHARACTER SET = utf8
+

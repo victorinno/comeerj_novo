@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="alojamentoCoordenador/View.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="turmaEvangelizacao/View.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="alojamentoMembros/Create.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="alojamento/Edit.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="turmaAlunos/Create.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="welcomePrimefaces.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="comeerj/Fichas_Atrasadas.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="alojamentoCoordenador/Create.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="turmaEvangelizacao/List.xhtml" x="150" y="1200" zoom="true"/>
+        <Node id="alojamentoCoordenador/List.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="index.html" x="1400" y="150" zoom="true"/>
+        <Node id="template.xhtml" x="650" y="900" zoom="true"/>
+        <Node id="alojamento/Create.xhtml" x="2150" y="150" zoom="true"/>
+        <Node id="dadosEquipe/View.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="index.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="comeerj/Create.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="dadosEquipe/Create.xhtml" x="400" y="1050" zoom="true"/>
+        <Node id="dadosEquipe/List.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="alojamentoMembros/List.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="equipe/View.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="equipe/Create.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="alojamento/List.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="dadosEquipe/Edit.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="comeerj/List.xhtml" x="1650" y="300" zoom="true"/>
+        <Node id="alojamento/View.xhtml" x="900" y="750" zoom="true"/>
+        <Node id="turmaAlunos/List.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="equipe/Edit.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="alojamentoCoordenador/Edit.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="comeerj/View.xhtml" x="1400" y="450" zoom="true"/>
+        <Node id="comeerj/Edit.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="turmaEvangelizacao/Edit.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="turmaAlunos/Edit.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="alojamentoMembros/View.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="equipe/List.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="alojamentoMembros/Edit.xhtml" x="1150" y="600" zoom="true"/>
+        <Node id="turmaAlunos/View.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="turmaEvangelizacao/Create.xhtml" x="650" y="300" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

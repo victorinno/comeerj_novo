@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{app.ListComeerjTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="ComeerjListForm">
+                <p:panel header="#{app.ListComeerjTitle}">
+                    <p:dataTable id="datalist" value="#{comeerjController.items}" var="item"
+                                 selectionMode="single" selection="#{comeerjController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.codFichaInscricaoComeerjId}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{app.ListComeerjTitle_codFichaInscricaoComeerjId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codFichaInscricaoComeerjId}"/>
+                        </p:column>
+                        
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{app.ListComeerjTitle_dscTipoParticipacao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscTipoParticipacao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{app.ListComeerjTitle_dscTipoComissao}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscTipoComissao}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{app.ListComeerjTitle_datNascimento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.datNascimento}"/>
+                        </p:column>
+                        
+                        
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{app.ListComeerjTitle_nomCompleto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomCompleto}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{app.ListComeerjTitle_codSexo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codSexo}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{app.ListComeerjTitle_nomCracha}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomCracha}"/>
+                        </p:column>
+                       
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{app.ListComeerjTitle_dscEmail}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscEmail}"/>
+                        </p:column>
+                        
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{app.ListComeerjTitle_nomIeParticipa}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomIeParticipa}"/>
+                        </p:column>
+                       
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{app.Create}" actionListener="#{comeerjController.prepareCreate}" update=":ComeerjCreateForm" oncomplete="PF('ComeerjCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{app.View}" update=":ComeerjViewForm" oncomplete="PF('ComeerjViewDialog').show()" disabled="#{empty comeerjController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{app.Edit}" update=":ComeerjEditForm" oncomplete="PF('ComeerjEditDialog').show()" disabled="#{empty comeerjController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{app.Delete}" actionListener="#{comeerjController.destroy}" update=":growl,datalist" disabled="#{empty comeerjController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

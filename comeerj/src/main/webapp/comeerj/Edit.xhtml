@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ComeerjEditDlg" widgetVar="ComeerjEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{app.EditComeerjTitle}">
+            <h:form id="ComeerjEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="6" rendered="#{comeerjController.selected != null}">
+                        
+                        <p:outputLabel value="#{app.EditComeerjLabel_codFichaInscricaoComeerjId}" for="numComeerj" />
+                        <p:inputText id="codFichaInscricaoComeerjId" value="#{comeerjController.selected.codFichaInscricaoComeerjId}" title="#{app.EditComeerjTitle_codFichaInscricaoComeerjId}" />
+                        
+                        <p:outputLabel value="#{app.EditComeerjLabel_numComeerj}" for="numComeerj" />
+                        <p:inputText id="numComeerj" value="#{comeerjController.selected.numComeerj}" title="#{app.EditComeerjTitle_numComeerj}" />
+                        
+                        <p:outputLabel value="#{app.EditComeerjLabel_dscTipoParticipacao}" for="dscTipoParticipacao" />
+            
+                        <p:inputText id="dscTipoParticipacao" value="#{comeerjController.selected.dscTipoParticipacao}"/>
+                        
+                        
+                        
+                        <p:outputLabel value="#{app.EditComeerjLabel_dscTipoComissao}" for="dscTipoComissao" />
+                 
+                        
+                        <p:inputText id="dscTipoComissao" value="#{comeerjController.selected.dscTipoComissao}"  />
+                        
+                        <p:outputLabel value="#{app.EditComeerjLabel_datNascimento}" for="datNascimento" />
+                        <p:calendar id="datNascimento" pattern="dd/MM/yyyy" value="#{comeerjController.selected.datNascimento}" title="#{app.EditComeerjTitle_datNascimento}"  showOn="button"/>
+                        <p:outputLabel value="#{app.EditComeerjLabel_dscProfissao}" for="dscProfissao" />
+                        <p:inputText id="dscProfissao" value="#{comeerjController.selected.dscProfissao}" title="#{app.EditComeerjTitle_dscProfissao}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_nomCompleto}" for="nomCompleto" />
+
+                        
+                        <p:inputText id="nomCompleto" value="#{comeerjController.selected.nomCompleto}" />
+ 
+                        
+                        <p:outputLabel value="#{app.EditComeerjLabel_codSexo}" for="codSexo" />
+                        <p:inputText id="codSexo" value="#{comeerjController.selected.codSexo}" title="#{app.EditComeerjTitle_codSexo}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_nomCracha}" for="nomCracha" />
+                        <p:inputText id="nomCracha" value="#{comeerjController.selected.nomCracha}" title="#{app.EditComeerjTitle_nomCracha}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_dscEnderecoMoradia}" for="dscEnderecoMoradia" />
+                        <p:inputText id="dscEnderecoMoradia" value="#{comeerjController.selected.dscEnderecoMoradia}" title="#{app.EditComeerjTitle_dscEnderecoMoradia}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_dscComplementoMoradia}" for="dscComplementoMoradia" />
+                        <p:inputText id="dscComplementoMoradia" value="#{comeerjController.selected.dscComplementoMoradia}" title="#{app.EditComeerjTitle_dscComplementoMoradia}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_nomBairroMoradia}" for="nomBairroMoradia" />
+                        <p:inputText id="nomBairroMoradia" value="#{comeerjController.selected.nomBairroMoradia}" title="#{app.EditComeerjTitle_nomBairroMoradia}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_codCepMoradia}" for="codCepMoradia" />
+                        <p:inputText id="codCepMoradia" value="#{comeerjController.selected.codCepMoradia}" title="#{app.EditComeerjTitle_codCepMoradia}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_nomCidadeMoradia}" for="nomCidadeMoradia" />
+                        <p:inputText id="nomCidadeMoradia" value="#{comeerjController.selected.nomCidadeMoradia}" title="#{app.EditComeerjTitle_nomCidadeMoradia}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_sigUfMoradia}" for="sigUfMoradia" />
+                        <p:inputText id="sigUfMoradia" value="#{comeerjController.selected.sigUfMoradia}" title="#{app.EditComeerjTitle_sigUfMoradia}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_codTipoContato1}" for="codTipoContato1" />
+                        <p:inputText id="codTipoContato1" value="#{comeerjController.selected.codTipoContato1}" title="#{app.EditComeerjTitle_codTipoContato1}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_numContato1}" for="numContato1" />
+                        <p:inputText id="numContato1" value="#{comeerjController.selected.numContato1}" title="#{app.EditComeerjTitle_numContato1}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_codTipoContato2}" for="codTipoContato2" />
+                        <p:inputText id="codTipoContato2" value="#{comeerjController.selected.codTipoContato2}" title="#{app.EditComeerjTitle_codTipoContato2}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_numContato2}" for="numContato2" />
+                        <p:inputText id="numContato2" value="#{comeerjController.selected.numContato2}" title="#{app.EditComeerjTitle_numContato2}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_codTipoContato3}" for="codTipoContato3" />
+                        <p:inputText id="codTipoContato3" value="#{comeerjController.selected.codTipoContato3}" title="#{app.EditComeerjTitle_codTipoContato3}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_numContato3}" for="numContato3" />
+                        <p:inputText id="numContato3" value="#{comeerjController.selected.numContato3}" title="#{app.EditComeerjTitle_numContato3}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_dscEmail}" for="dscEmail" />
+                        <p:inputText id="dscEmail" value="#{comeerjController.selected.dscEmail}" title="#{app.EditComeerjTitle_dscEmail}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_indOutraComeerj}" for="indOutraComeerj" />
+                        <p:inputText id="indOutraComeerj" value="#{comeerjController.selected.indOutraComeerj}" title="#{app.EditComeerjTitle_indOutraComeerj}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_qtdOutraComeerj}" for="qtdOutraComeerj" />
+                        <p:inputText id="qtdOutraComeerj" value="#{comeerjController.selected.qtdOutraComeerj}" title="#{app.EditComeerjTitle_qtdOutraComeerj}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_indFazUsoMedicacao}" for="indFazUsoMedicacao" />
+                        <p:inputText id="indFazUsoMedicacao" value="#{comeerjController.selected.indFazUsoMedicacao}" title="#{app.EditComeerjTitle_indFazUsoMedicacao}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_dscListaMedicamento}" for="dscListaMedicamento" />
+                        <p:inputText id="dscListaMedicamento" value="#{comeerjController.selected.dscListaMedicamento}" title="#{app.EditComeerjTitle_dscListaMedicamento}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_indTemConvenioMedico}" for="indTemConvenioMedico" />
+                        <p:inputText id="indTemConvenioMedico" value="#{comeerjController.selected.indTemConvenioMedico}" title="#{app.EditComeerjTitle_indTemConvenioMedico}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_nomConvenioMedico}" for="nomConvenioMedico" />
+                        <p:inputText id="nomConvenioMedico" value="#{comeerjController.selected.nomConvenioMedico}" title="#{app.EditComeerjTitle_nomConvenioMedico}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_indVegetariano}" for="indVegetariano" />
+                        <p:inputText id="indVegetariano" value="#{comeerjController.selected.indVegetariano}" title="#{app.EditComeerjTitle_indVegetariano}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_dscListaAlimentacao}" for="dscListaAlimentacao" />
+                        <p:inputText id="dscListaAlimentacao" value="#{comeerjController.selected.dscListaAlimentacao}" title="#{app.EditComeerjTitle_dscListaAlimentacao}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_indAlergico}" for="indAlergico" />
+                        <p:inputText id="indAlergico" value="#{comeerjController.selected.indAlergico}" title="#{app.EditComeerjTitle_indAlergico}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_dscListaAlergia}" for="dscListaAlergia" />
+                        <p:inputText id="dscListaAlergia" value="#{comeerjController.selected.dscListaAlergia}" title="#{app.EditComeerjTitle_dscListaAlergia}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_nomAutorizacaoMenor}" for="nomAutorizacaoMenor" />
+                        <p:inputText id="nomAutorizacaoMenor" value="#{comeerjController.selected.nomAutorizacaoMenor}" title="#{app.EditComeerjTitle_nomAutorizacaoMenor}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_numIdentidadeAutorizacaoMenor}" for="numIdentidadeAutorizacaoMenor" />
+                        <p:inputText id="numIdentidadeAutorizacaoMenor" value="#{comeerjController.selected.numIdentidadeAutorizacaoMenor}" title="#{app.EditComeerjTitle_numIdentidadeAutorizacaoMenor}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_nomIeParticipa}" for="nomIeParticipa" />
+                        <p:inputText id="nomIeParticipa" value="#{comeerjController.selected.nomIeParticipa}" title="#{app.EditComeerjTitle_nomIeParticipa}" />
+                        
+                        <p:outputLabel value="#{app.EditComeerjLabel_sigUfIea}" for="sigUfIea" />
+                        <p:inputText id="sigUfIea" value="#{comeerjController.selected.sigUfIea}" title="#{app.EditComeerjTitle_sigUfIea}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_datCadastramento}" for="datCadastramento" />
+
+                        <p:calendar id="datCadastramento" pattern="dd/MM/yyyy" value="#{comeerjController.selected.datCadastramento}" title="#{app.EditComeerjTitle_datCadastramento}"  showOn="button"/>
+                       
+                        <p:outputLabel value="#{app.EditComeerjLabel_datPagamentoInscricao}" for="datPagamentoInscricao" />
+                        <p:inputText id="datPagamentoInscricao" value="#{comeerjController.selected.datPagamentoInscricao}" title="#{app.EditComeerjTitle_datPagamentoInscricao}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_indCompareceu}" for="indCompareceu" />
+                        <p:inputText id="indCompareceu" value="#{comeerjController.selected.indCompareceu}" title="#{app.EditComeerjTitle_indCompareceu}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_nomContato4}" for="nomContato4" />
+                        <p:inputText id="nomContato4" value="#{comeerjController.selected.nomContato4}" title="#{app.EditComeerjTitle_nomContato4}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_numContato4}" for="numContato4" />
+                        <p:inputText id="numContato4" value="#{comeerjController.selected.numContato4}" title="#{app.EditComeerjTitle_numContato4}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_nomFilhoInscritoPolo}" for="nomFilhoInscritoPolo" />
+
+                        <p:inputText id="nomFilhoInscritoPolo" value="#{comeerjController.selected.nomFilhoInscritoPolo}" title="#{app.EditComeerjTitle_nomFilhoInscritoPolo}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_numTelConvenioMedico}" for="numTelConvenioMedico" />
+                        <p:inputText id="numTelConvenioMedico" value="#{comeerjController.selected.numTelConvenioMedico}" title="#{app.EditComeerjTitle_numTelConvenioMedico}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_codStatusFichaInscricao}" for="codStatusFichaInscricao" />
+                        <p:inputText id="codStatusFichaInscricao" value="#{comeerjController.selected.codStatusFichaInscricao}" title="#{app.EditComeerjTitle_codStatusFichaInscricao}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_indicPortadorNEspecial}" for="indicPortadorNEspecial" />
+
+
+                        <p:inputText id="indicPortadorNEspecial" value="#{comeerjController.selected.indicPortadorNEspecial}" title="#{app.EditComeerjTitle_indicPortadorNEspecial}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_dscObservacaoNEspecial}" for="dscObservacaoNEspecial" />
+                        <p:inputText id="dscObservacaoNEspecial" value="#{comeerjController.selected.dscObservacaoNEspecial}" title="#{app.EditComeerjTitle_dscObservacaoNEspecial}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_indicTemRespPeqCompanheiro}" for="indicTemRespPeqCompanheiro" />
+                        <p:inputText id="indicTemRespPeqCompanheiro" value="#{comeerjController.selected.indicTemRespPeqCompanheiro}" title="#{app.EditComeerjTitle_indicTemRespPeqCompanheiro}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_numInscricaoRespPeqCompanheiro}" for="numInscricaoRespPeqCompanheiro" />
+                        <p:inputText id="numInscricaoRespPeqCompanheiro" value="#{comeerjController.selected.numInscricaoRespPeqCompanheiro}" title="#{app.EditComeerjTitle_numInscricaoRespPeqCompanheiro}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_numInscricaoConjuge}" for="numInscricaoConjuge" />
+                        <p:inputText id="numInscricaoConjuge" value="#{comeerjController.selected.numInscricaoConjuge}" title="#{app.EditComeerjTitle_numInscricaoConjuge}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_indicTemConjuge}" for="indicTemConjuge" />
+
+                        <p:inputText id="indicTemConjuge" value="#{comeerjController.selected.indicTemConjuge}" title="#{app.EditComeerjTitle_indicTemConjuge}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_codEstadoCivil}" for="codEstadoCivil" />
+                        <p:inputText id="codEstadoCivil" value="#{comeerjController.selected.codEstadoCivil}" title="#{app.EditComeerjTitle_codEstadoCivil}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_dscEmailCoordenador}" for="dscEmailCoordenador" />
+                        <p:inputText id="dscEmailCoordenador" value="#{comeerjController.selected.dscEmailCoordenador}" title="#{app.EditComeerjTitle_dscEmailCoordenador}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_indicPortadorNEduEspecial}" for="indicPortadorNEduEspecial" />
+                        <p:inputText id="indicPortadorNEduEspecial" value="#{comeerjController.selected.indicPortadorNEduEspecial}" title="#{app.EditComeerjTitle_indicPortadorNEduEspecial}" />
+                        <p:outputLabel value="#{app.EditComeerjLabel_dscObservacaoNEduEspecial}" for="dscObservacaoNEduEspecial" />
+                        <p:inputText id="dscObservacaoNEduEspecial" value="#{comeerjController.selected.dscObservacaoNEduEspecial}" title="#{app.EditComeerjTitle_dscObservacaoNEduEspecial}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{comeerjController.update}" value="#{app.Save}" update="display,:ComeerjListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ComeerjEditDialog');"/>
+                    <p:commandButton value="#{app.Cancel}" onclick="ComeerjEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
